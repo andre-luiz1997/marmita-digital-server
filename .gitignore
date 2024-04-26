@@ -1,0 +1,4 @@
+node_modules/*
+node_modules/webpack
+dist/
+node_modules/.package-lock.json
