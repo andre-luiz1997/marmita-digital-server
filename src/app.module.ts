@@ -1,3 +1,4 @@
+import { UserController } from './application/controllers';
 import { DatabaseModule } from './infra/database/database.module';
 import { Module } from '@nestjs/common';
 
@@ -5,7 +6,9 @@ import { Module } from '@nestjs/common';
   imports: [
     DatabaseModule
   ],
-  controllers: [],
+  controllers: [
+    UserController
+  ],
   providers: [],
 })
 export class AppModule { }
