@@ -8,9 +8,11 @@ import type { CreateUserDTO } from "@/application/dtos/users/create-user.dto";
 export class UserService {
   constructor(
     @Inject(SERVICES.USER) private readonly repository: BaseRepository<User>
-  ) { }
+  ) {
+  }
 
   async create(data: CreateUserDTO) {
+    console.log("🚀 ~ UserService ~ create ~ create:")
     return this.repository.create(data);
   }
 

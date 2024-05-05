@@ -1,4 +1,3 @@
-import { User } from "@/domain/entities/user";
 import { Module } from "@nestjs/common";
 import { MongooseModule } from "@nestjs/mongoose";
 import { DB_HOST, DB_NAME, DB_PASS, DB_PORT, DB_USER, PROVIDERS } from "@/constants";
@@ -18,7 +17,6 @@ function getMongooseConnectionString () {
     ]),
     MongooseModule.forRoot(getMongooseConnectionString())
   ],
-  controllers: [],
   providers: [
     ...userServiceProviders,
     UserMongoRepository

@@ -14,6 +14,7 @@ export class UserMongoRepository implements BaseRepository<User> {
   ) {}
 
   create(data: DTO<User>): Promise<User> {
+    console.log("🚀 ~ UserMongoRepository ~ create ~ create:")
     if(!data._id) data._id = new Types.ObjectId();
     return this.model.create(data);
   }

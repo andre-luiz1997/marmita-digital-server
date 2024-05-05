@@ -1,11 +1,12 @@
 import { UserService } from '@/domain/services/user.service';
 import { Body, Controller, Get, Inject, Param, Post } from '@nestjs/common';
-import type { CreateUserDTO } from '../dtos/users/create-user.dto';
+import { CreateUserDTO } from '../dtos/users/create-user.dto';
+import { SERVICES } from '@/constants';
 
 @Controller('/users')
 export class UserController {
   constructor(
-    @Inject(UserService) private readonly userService: UserService
+    @Inject(SERVICES.USER) private readonly userService: UserService
   ) {}
 
   @Get('/:id')
@@ -19,7 +20,8 @@ export class UserController {
   }
 
   @Post()
-  create(@Body() data: CreateUserDTO) {
+  async create(@Body() data: CreateUserDTO) {
+    console.log("🚀 ~ UserController ~ create ~ data:", data)
     return this.userService.create(data);
   }
 }
