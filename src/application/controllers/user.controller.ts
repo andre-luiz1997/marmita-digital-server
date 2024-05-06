@@ -18,10 +18,4 @@ export class UserController {
   find() {
     return this.userService.find();
   }
-
-  @Post()
-  async create(@Body() data: CreateUserDTO) {
-    console.log("🚀 ~ UserController ~ create ~ data:", data)
-    return this.userService.create(data);
-  }
 }

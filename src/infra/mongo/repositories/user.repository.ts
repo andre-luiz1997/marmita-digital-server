@@ -5,7 +5,7 @@ import { Injectable } from "@nestjs/common";
 import { Types, type Model } from "mongoose";
 import { InjectModel } from "@nestjs/mongoose";
 import { PROVIDERS } from "@/constants";
-import { RecordNotFoundException } from "@/application/exceptions/recordnotfound.exception";
+import { RecordNotFoundException } from "@/application/exceptions";
 
 @Injectable()
 export class UserMongoRepository implements BaseRepository<User> {
@@ -14,7 +14,6 @@ export class UserMongoRepository implements BaseRepository<User> {
   ) {}
 
   create(data: DTO<User>): Promise<User> {
-    console.log("🚀 ~ UserMongoRepository ~ create ~ create:")
     if(!data._id) data._id = new Types.ObjectId();
     return this.model.create(data);
   }
@@ -35,6 +34,10 @@ export class UserMongoRepository implements BaseRepository<User> {
 
   findById(id: string): Promise<User> {
     return this.model.findById(id).lean();
+  }
+
+  findOne(options?: any, includePassword = false): Promise<User> {
+    return this.model.findOne(options).select(`${includePassword ? '+' : '-'}password`).exec();
   }
 
   find(): Promise<User[]> {

@@ -1,6 +1,6 @@
 import { Transform } from "class-transformer";
 import { IsEmail, IsNotEmpty, IsString, IsStrongPassword, MinLength } from "class-validator";
-import {hash} from 'bcrypt';
+import {hashSync} from 'bcrypt';
 
 export class CreateUserDTO {
   @IsNotEmpty()
@@ -13,7 +13,7 @@ export class CreateUserDTO {
   email: string;
   @IsNotEmpty()
   @IsString()
-  @IsStrongPassword()
-  @Transform(async ({value}) => await hash(value,10))
+  @MinLength(8)
+  @Transform(({value}) => hashSync(value,10))
   password: string;
 }

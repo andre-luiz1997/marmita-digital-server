@@ -16,5 +16,11 @@ export enum PROVIDERS {
 }
 
 export enum SERVICES {
+  AUTH = 'AuthService',
   USER = 'UserService',
 }
+
+export const JWT_SECRET = process.env.JWT_SECRET;
+export const JWT_EXPIRATION = process.env.JWT_EXPIRATION;
+
+export const IS_PUBLIC_KEY = 'isPublic';

@@ -3,7 +3,7 @@ import { MongooseModule } from "@nestjs/mongoose";
 import { DB_HOST, DB_NAME, DB_PASS, DB_PORT, DB_USER, PROVIDERS } from "@/constants";
 import { UserMongoModel } from "./models/user-mongo.model";
 import { UserMongoRepository } from "./repositories/user.repository";
-import { userServiceProviders } from "./service-providers/user.serviceprovider";
+import { serviceProviders } from "./service-providers/service-providers";
 
 function getMongooseConnectionString () {
   const user = DB_USER ? `${DB_USER}:${DB_PASS}@` : '';
@@ -18,11 +18,11 @@ function getMongooseConnectionString () {
     MongooseModule.forRoot(getMongooseConnectionString())
   ],
   providers: [
-    ...userServiceProviders,
+    ...serviceProviders,
     UserMongoRepository
   ],
   exports: [
-    ...userServiceProviders,
+    ...serviceProviders,
     UserMongoRepository
   ]
 })
