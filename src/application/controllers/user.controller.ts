@@ -1,12 +1,13 @@
 import { UserService } from '@/domain/services/user.service';
-import { Body, Controller, Get, Inject, Param, Post } from '@nestjs/common';
-import { CreateUserDTO } from '../dtos/users/create-user.dto';
-import { SERVICES } from '@/constants';
+import { Body, Controller, Get, Inject, Param, Patch, Post } from '@nestjs/common';
+import { REPOSITORIES } from '@/constants';
+import { UpdateUserDTO } from '../dtos/users/udate-user.dto';
+import { UsePermissions } from '../decorators';
 
 @Controller('/users')
 export class UserController {
   constructor(
-    @Inject(SERVICES.USER) private readonly userService: UserService
+    @Inject(REPOSITORIES.USER) private readonly userService: UserService
   ) {}
 
   @Get('/:id')
@@ -17,5 +18,11 @@ export class UserController {
   @Get()
   find() {
     return this.userService.find();
+  }
+
+  @Patch('/:id')
+  @UsePermissions()
+  update(@Param('id') id: string, @Body() data: UpdateUserDTO) {
+    return this.userService.update(id, data);
   }
 }

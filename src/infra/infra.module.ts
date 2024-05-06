@@ -6,6 +6,8 @@ import { JwtModule } from '@nestjs/jwt';
 import { JWT_EXPIRATION, JWT_SECRET } from '@/constants';
 import { APP_GUARD } from '@nestjs/core';
 import { JwtAuthGuard } from '@/application/guards';
+import { GroupController } from '@/application/controllers/group.controller';
+import { PermissionsGuard } from '@/application/guards/permission.guard';
 
 @Module({
     imports: [
@@ -18,12 +20,17 @@ import { JwtAuthGuard } from '@/application/guards';
     ],
     controllers: [
         UserController,
-        AuthController
+        AuthController,
+        GroupController
     ],
     providers: [
         {
             provide: APP_GUARD,
             useClass: JwtAuthGuard,
+        },
+        {
+            provide: APP_GUARD,
+            useClass: PermissionsGuard,
         },
     ],
 })

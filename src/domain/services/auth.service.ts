@@ -1,4 +1,4 @@
-import { SERVICES } from '@/constants';
+import { REPOSITORIES } from '@/constants';
 import type { BaseRepository } from '@/shared/repository';
 import { Inject, Injectable, UnauthorizedException } from '@nestjs/common';
 import { User } from '../entities/user';
@@ -7,19 +7,18 @@ import { ConflictException, RecordNotFoundException } from '@/application/except
 import { compareSync } from 'bcrypt';
 import { JwtService } from '@nestjs/jwt';
 import { SigninDTO } from '@/application/dtos/auth/signin.dto';
+import { UserService } from './user.service';
 
 @Injectable()
 export class AuthService {
   constructor(
-    @Inject(SERVICES.USER) private readonly repository: BaseRepository<User>,
+    @Inject(UserService) private readonly userService: UserService,
+    @Inject(REPOSITORIES.USER) private readonly repository: BaseRepository<User>,
     @Inject(JwtService) private readonly jwtService: JwtService
   ) { }
 
   async signup(data: CreateUserDTO) {
-    const existingUser = await this.repository.findOne({ email: data.email });
-    if (existingUser) throw new ConflictException(User.name, 'email', data.email);
-    const user = await this.repository.create(data);
-    return this.repository.findById(user._id);
+    return this.userService.create(data);
   }
 
   async signin(data: SigninDTO) {

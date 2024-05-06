@@ -1,3 +1,5 @@
+import { GroupController } from './application/controllers/group.controller';
+import { GroupService } from './domain/services/group.service';
 import { InfraModule } from './infra/infra.module';
 import { Module } from '@nestjs/common';
 
@@ -5,7 +7,9 @@ import { Module } from '@nestjs/common';
   imports: [
     InfraModule
   ],
-  controllers: [],
+  controllers: [
+    
+  ],
   providers: [],
 })
 export class AppModule { }

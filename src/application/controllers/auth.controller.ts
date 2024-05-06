@@ -1,4 +1,4 @@
-import { SERVICES } from '@/constants';
+import { REPOSITORIES, SERVICES } from '@/constants';
 import { AuthService } from '@/domain/services';
 import { Body, Controller, Inject, Post } from '@nestjs/common';
 import { CreateUserDTO } from '../dtos';

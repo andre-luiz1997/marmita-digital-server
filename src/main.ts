@@ -4,6 +4,7 @@ import { AppModule } from './app.module';
 import { APP_PORT } from '@/constants';
 import { ValidationPipe } from '@nestjs/common';
 import { NestExpressApplication } from '@nestjs/platform-express';
+import { PERMISSIONS } from './permissions';
 
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
@@ -13,7 +14,6 @@ async function bootstrap() {
     origin: '*'
   })
   app.useGlobalPipes(new ValidationPipe({transform: true}));
-  
   await app.listen(APP_PORT, () => console.log(`Server running on port ${APP_PORT}`));
 }
 bootstrap();

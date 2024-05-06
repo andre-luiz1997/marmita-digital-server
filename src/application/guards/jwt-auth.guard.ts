@@ -1,7 +1,6 @@
 import { Injectable, CanActivate, ExecutionContext, Inject } from '@nestjs/common';
-import { Observable } from 'rxjs';
 import { JwtService } from '@nestjs/jwt';
-import { IS_PUBLIC_KEY, SERVICES } from '@/constants';
+import { IS_PUBLIC_KEY, REPOSITORIES } from '@/constants';
 import { Reflector } from '@nestjs/core';
 import { UnauthorizedException } from '../exceptions/unauthorized.exception';
 import { UserService } from '@/domain/services';
@@ -11,7 +10,7 @@ export class JwtAuthGuard implements CanActivate {
   constructor(
     @Inject(Reflector) private reflector: Reflector,
     @Inject(JwtService) private jwtService: JwtService,
-    @Inject(SERVICES.USER) private userService: UserService,
+    @Inject(REPOSITORIES.USER) private userService: UserService,
   ) { }
 
   async canActivate(
@@ -30,11 +29,11 @@ export class JwtAuthGuard implements CanActivate {
     return true;
   }
 
-  private async authenticate(token: string) {
+  private authenticate(token: string) {
     try {
-      const bearer = token.split('Bearer ')[1];
-      const payload = await this.jwtService.verify(bearer);
-      return this.userService.findById(payload.id);
+      const [type,bearer] = token.split(' ') ?? [];
+      const payload = this.jwtService.verify(type == 'Bearer' ? bearer : token);
+      return this.userService.findById(payload._id);
     } catch (error) {
       return null;
     }

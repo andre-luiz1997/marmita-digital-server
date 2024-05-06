@@ -1,0 +1,15 @@
+
+export enum PERMISSIONS {
+  CREATE_USER = 'CREATE_USER',
+  EDIT_USER = 'EDIT_USER',
+  DELETE_USER = 'DELETE_USER',
+  READ_USER = 'READ_USER',
+  CREATE_GROUP = 'CREATE_GROUP',
+  EDIT_GROUP = 'EDIT_GROUP',
+  DELETE_GROUP = 'DELETE_GROUP',
+  READ_GROUP = 'READ_GROUP',
+};
+
+export const PERMISSIONS_KEY = 'permissions';
+
+export type Permission = keyof typeof PERMISSIONS;

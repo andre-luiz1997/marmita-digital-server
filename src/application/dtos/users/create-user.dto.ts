@@ -16,4 +16,8 @@ export class CreateUserDTO {
   @MinLength(8)
   @Transform(({value}) => hashSync(value,10))
   password: string;
+
+  @IsNotEmpty()
+  @IsString()
+  groupId: string;
 }
