@@ -33,15 +33,15 @@ export class MongoRepository<T extends Entity> extends Repository<T> {
   }
 
   findAll(): Promise<T[]> {
-    return this.model.find().exec();
+    return this.model.find().lean();
   }
 
   findOne(filter: any): Promise<T> {
-    return this.model.findOne(filter).exec();
+    return this.model.findOne(filter).lean();
   }
 
   findMany(filter: any): Promise<T[]> {
-    return this.model.find(filter).exec();
+    return this.model.find(filter).lean();
   }
 
   async delete(_id: any): Promise<void> {
