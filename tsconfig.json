@@ -1,4 +1,10 @@
 {
+  "ts-node": {
+    "transpileOnly": true,
+    "require": [
+      "tsconfig-paths/register"
+    ]
+  },
   "compilerOptions": {
     "module": "commonjs",
     "declaration": true,
@@ -6,10 +12,12 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
-    "target": "ES2021",
+    "target": "ES2022",
     "sourceMap": true,
     "outDir": "./dist",
     "baseUrl": "./",
+    "rootDir": "./",
+    "moduleResolution": "Node",
     "incremental": true,
     "skipLibCheck": true,
     "strictNullChecks": false,
@@ -17,8 +25,40 @@
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
+    "resolveJsonModule": true,
+    "typeRoots": [
+      "./node_modules/@types",
+      "./typings"
+    ],
     "paths": {
-      "@/*": ["src/*"]
+      "core/*": [
+        "./src/core/*"
+      ],
+      "data/*": [
+        "./src/data/*"
+      ],
+      "infra/*": [
+        "./src/infra/*"
+      ],
+      "presentation/*": [
+        "./src/presentation/*"
+      ],
+      "services/*": [
+        "./src/services/*"
+      ],
+      "shared/*": [
+        "./src/shared/*"
+      ],
+      "@/*": [
+        "./src/*"
+      ]
     }
-  }
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
 }

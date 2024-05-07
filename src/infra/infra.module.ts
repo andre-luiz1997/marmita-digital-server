@@ -1,29 +1,43 @@
-import { UserController } from '@/application/controllers';
-import { AuthController } from '@/application/controllers/auth.controller';
 import { Module } from '@nestjs/common';
-import { MongoModule } from './mongo/mongo.module';
 import { JwtModule } from '@nestjs/jwt';
-import { JWT_EXPIRATION, JWT_SECRET } from '@/constants';
+import { DB_HOST, DB_NAME, DB_PASS, DB_PORT, DB_USER, JWT_EXPIRATION, JWT_SECRET } from '@/constants';
 import { APP_GUARD } from '@nestjs/core';
-import { JwtAuthGuard } from '@/application/guards';
-import { GroupController } from '@/application/controllers/group.controller';
-import { PermissionsGuard } from '@/application/guards/permission.guard';
+import { JwtAuthGuard } from '@/shared/guards';
+import { PermissionsGuard } from '@/shared/guards/permission.guard';
+import { UserController, AuthController } from '@/presentation/controllers';
+import { GroupController } from '@/presentation/controllers/group.controller';
+import { MongooseModule } from '@nestjs/mongoose';
+import { GroupMongoModel, UserMongoModel } from './mongo/models';
+import { GroupEntity, UserEntity } from '@/core/domain/entities';
+import { repositoriesProviders } from './mongo/repository-providers';
+import { UsersService } from '@/services/users.service';
+import { GroupsService } from '@/services/group.service';
+import { AuthService } from 'services/auth.service';
+
+function getMongooseConnectionString() {
+    const user = DB_USER ? `${DB_USER}:${DB_PASS}@` : '';
+    return `mongodb://${user}${DB_HOST}:${DB_PORT}/${DB_NAME}`;
+}
+
 
 @Module({
     imports: [
-        MongoModule,
+        MongooseModule.forRoot(getMongooseConnectionString()),
+        MongooseModule.forFeature([
+            { name: GroupEntity.name, schema: GroupMongoModel },
+            { name: UserEntity.name, schema: UserMongoModel },
+        ]),
         JwtModule.register({
             global: true,
             secret: JWT_SECRET,
             signOptions: { expiresIn: JWT_EXPIRATION }
         })
     ],
-    controllers: [
-        UserController,
-        AuthController,
-        GroupController
-    ],
     providers: [
+        ...repositoriesProviders,
+        UsersService,
+        GroupsService,
+        AuthService,
         {
             provide: APP_GUARD,
             useClass: JwtAuthGuard,
@@ -32,6 +46,11 @@ import { PermissionsGuard } from '@/application/guards/permission.guard';
             provide: APP_GUARD,
             useClass: PermissionsGuard,
         },
+    ],
+    controllers: [
+        AuthController,
+        GroupController,
+        UserController
     ],
 })
 export class InfraModule { }
