@@ -1,7 +1,4 @@
-import { RecordNotFoundException } from '@/shared/exceptions';
 import { CreateUserDTO } from '@/core/dtos';
-import { GroupRepository } from '@/core/repositories/group.repository';
-import { UserRepository } from '@/core/repositories/user.repository';
 import { Injectable } from '@nestjs/common';
 import { UserEntity, UserWithoutPassword } from 'core/domain/entities';
 import { UpdateUserDTO } from 'core/dtos/users/update-user.dto';
