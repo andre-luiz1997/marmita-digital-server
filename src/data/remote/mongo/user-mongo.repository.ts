@@ -19,4 +19,20 @@ export class UserMongoRepository extends MongoRepository<UserEntity> implements 
     if (existingUser) throw new ConflictException('user', 'email', data.email);
     return super.create(data);
   }
+
+  findOneById(_id: any, omitPassword = true): Promise<UserEntity> {
+    return this.model.findById(_id).select(`${omitPassword ? '-' : '+'}password`).lean();
+  }
+
+  findAll(omitPassword?: boolean): Promise<UserEntity[]>{
+    return this.model.find().select(`${omitPassword ? '-' : '+'}password`).lean();
+  }
+
+  findOne(filter: any, omitPassword?: boolean): Promise<UserEntity> {
+    return this.model.findOne(filter).select(`${omitPassword ? '-' : '+'}password`).lean();
+  }
+
+  findMany(filter: any, omitPassword?: boolean): Promise<UserEntity[]> {
+    return this.model.find(filter).select(`${omitPassword ? '-' : '+'}password`).lean();
+  }
 }

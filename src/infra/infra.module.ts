@@ -13,6 +13,7 @@ import { repositoriesProviders } from './mongo/repository-providers';
 import { UsersService } from '@/services/users.service';
 import { GroupsService } from '@/services/group.service';
 import { AuthService } from 'services/auth.service';
+import { useCasesProviders } from 'services/use-cases/use-cases.providers';
 
 function getMongooseConnectionString() {
     const user = DB_USER ? `${DB_USER}:${DB_PASS}@` : '';
@@ -35,6 +36,7 @@ function getMongooseConnectionString() {
     ],
     providers: [
         ...repositoriesProviders,
+        ...useCasesProviders,
         UsersService,
         GroupsService,
         AuthService,

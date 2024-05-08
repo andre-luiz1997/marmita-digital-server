@@ -10,3 +10,5 @@ export class UserEntity extends Entity {
   public updatedAt?: Date;
   public deletedAt?: Date;
 }
+
+export type UserWithoutPassword = Omit<UserEntity, 'password'>;

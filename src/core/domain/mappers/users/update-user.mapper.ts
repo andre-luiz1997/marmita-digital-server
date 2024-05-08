@@ -1,6 +1,6 @@
 import { Mapper } from "@/core/base/mapper";
 import { UserEntity } from "../../entities";
-import { UpdateUserDTO } from "core/dtos/users/udate-user.dto";
+import { UpdateUserDTO } from "core/dtos/users/update-user.dto";
 
 export class UpdateUserMapper extends Mapper<UpdateUserDTO, UserEntity> {
 

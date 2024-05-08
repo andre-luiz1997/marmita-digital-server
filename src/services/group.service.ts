@@ -7,32 +7,35 @@ import { UpdateGroupDTO } from '@/core/dtos/groups/update-group.dto';
 import { GroupRepository } from '@/core/repositories/group.repository';
 import { CreateGroupMapper } from '@/core/domain/mappers/groups/create-group.mapper';
 import { UpdateGroupMapper } from '@/core/domain/mappers/groups/update-group.mapper';
+import { CreateGroupUseCase, DeleteGroupUseCase, FindAllGroupsUseCase, FindGroupByIdUseCase, UpdateGroupUseCase } from './use-cases';
 
 @Injectable()
 export class GroupsService {
   constructor(
-    private readonly repository: GroupRepository
+    private readonly createGroupUseCase: CreateGroupUseCase,
+    private readonly updateGroupUseCase: UpdateGroupUseCase,
+    private readonly deleteGroupUseCase: DeleteGroupUseCase,
+    private readonly findGroupByIdUseCase: FindGroupByIdUseCase,
+    private readonly findAllGroupsUseCase: FindAllGroupsUseCase,
   ) {}
 
   async create(data: CreateGroupDTO) {
-    const mapper = new CreateGroupMapper();
-    return this.repository.create(mapper.mapFrom(data));
+    return this.createGroupUseCase.execute(data);
   }
 
   async update(id: string, data: UpdateGroupDTO) {
-    const mapper = new UpdateGroupMapper();
-    return this.repository.update(id, mapper.mapFrom(data));
+    return this.updateGroupUseCase.execute(id, data);
   }
 
   async delete(id: string) {
-    return this.repository.delete(id);
+    return this.deleteGroupUseCase.execute(id);
   }
 
   async findOneById(id: string) {
-    return this.repository.findOneById(id);
+    return this.findGroupByIdUseCase.execute(id);
   }
 
   async find() {
-    return this.repository.findAll();
+    return this.findAllGroupsUseCase.execute();
   }
 }
