@@ -5,11 +5,12 @@ import { InjectModel } from "@nestjs/mongoose";
 import { Model } from "mongoose";
 import { MongoRepository } from "./mongo.repository";
 import { ConflictException } from "shared/exceptions";
+import { ENTITIES } from "@/constants";
 
 @Injectable()
 export class UserMongoRepository extends MongoRepository<UserEntity> implements UserRepository {
   constructor(
-    @InjectModel(UserEntity.name) model: Model<UserEntity>
+    @InjectModel(ENTITIES.USER) model: Model<UserEntity>
   ) {
     super(model);
   }

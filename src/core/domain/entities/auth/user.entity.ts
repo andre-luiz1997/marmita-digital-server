@@ -2,6 +2,7 @@ import { Entity } from "@/core/base";
 
 export class UserEntity extends Entity {
   public email: string;
+  public mobile_phone: string;
   public password: string;
   public name: string;
   public group: any;

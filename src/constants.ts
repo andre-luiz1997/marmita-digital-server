@@ -16,6 +16,11 @@ export enum PROVIDERS {
   USER = 'USER',
 }
 
+export enum ENTITIES {
+  USER = 'users',
+  GROUP = 'groups',
+}
+
 export enum SERVICES {
   AUTH = 'AuthService',
   USER = 'UserService',

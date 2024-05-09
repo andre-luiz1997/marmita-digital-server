@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { JwtModule } from '@nestjs/jwt';
-import { DB_HOST, DB_NAME, DB_PASS, DB_PORT, DB_USER, JWT_EXPIRATION, JWT_SECRET } from '@/constants';
+import { DB_HOST, DB_NAME, DB_PASS, DB_PORT, DB_USER, ENTITIES, JWT_EXPIRATION, JWT_SECRET } from '@/constants';
 import { APP_GUARD } from '@nestjs/core';
 import { JwtAuthGuard } from '@/shared/guards';
 import { PermissionsGuard } from '@/shared/guards/permission.guard';
@@ -25,8 +25,8 @@ function getMongooseConnectionString() {
     imports: [
         MongooseModule.forRoot(getMongooseConnectionString()),
         MongooseModule.forFeature([
-            { name: GroupEntity.name, schema: GroupMongoModel },
-            { name: UserEntity.name, schema: UserMongoModel },
+            { name: ENTITIES.GROUP, schema: GroupMongoModel },
+            { name: ENTITIES.USER, schema: UserMongoModel },
         ]),
         JwtModule.register({
             global: true,

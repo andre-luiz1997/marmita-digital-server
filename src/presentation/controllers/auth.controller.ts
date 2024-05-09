@@ -1,5 +1,6 @@
 import { CreateUserDTO, SigninDTO } from '@/core/dtos';
-import { Controller, Post, Body } from '@nestjs/common';
+import { Controller, Post, Body, Query, Get } from '@nestjs/common';
+import { ControllerResponse } from 'presentation/response';
 import { AuthService } from 'services/auth.service';
 import { PublicRoute } from 'shared/decorators';
 
@@ -9,6 +10,19 @@ export class AuthController {
   constructor(
     private authService: AuthService,
   ) {}
+
+  @Get('/identity-check')
+  @PublicRoute()
+  async identityCheck(
+    @Query('email') email?: string,
+    @Query('mobile_phone') mobile_phone?: string,
+  ) {
+    const data = await this.authService.identityCheck({
+      email,
+      mobile_phone,
+    })
+    return ControllerResponse.build({ data });
+  }
 
   @Post('/signup')
   @PublicRoute()
