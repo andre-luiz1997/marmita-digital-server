@@ -23,6 +23,7 @@ export class GroupController {
   @Post()
   @PublicRoute()
   create(@Body() data: CreateGroupDTO) {
+    console.log('🚀 ~ file: group.controller.ts:26 ~ GroupController ~ create ~ data 🚀 ➡➡', data);
     return this.groupService.create(data);
   }
 

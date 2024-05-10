@@ -4,6 +4,7 @@ import { Permission } from "@/permissions";
 export class GroupEntity extends Entity {
   public name: string;
   public permissions: Permission[];
+  public default: boolean;
   public createdAt: Date;
   public updatedAt?: Date;
   public deletedAt?: Date;

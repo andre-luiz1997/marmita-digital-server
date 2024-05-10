@@ -10,6 +10,8 @@
     "/src/core/dtos/auth",
     "/src/core/dtos",
     "/src/services/use-cases",
-    "/src/services/use-cases/groups"
+    "/src/services/use-cases/groups",
+    "/src/shared/exceptions",
+    "/src/core/domain/entities"
   ]
 }

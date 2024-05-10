@@ -1,6 +1,6 @@
 import { IsValidPermissions } from "@/shared/validators/isPermission";
 import { Permission } from "@/permissions";
-import { IsArray, IsEnum, IsNotEmpty, IsString, MinLength, Validate, ValidateNested } from "class-validator";
+import { IsArray, IsBoolean, IsEnum, IsNotEmpty, IsOptional, IsString, MinLength, Validate, ValidateNested } from "class-validator";
 
 export class CreateGroupDTO {
   @IsString()
@@ -11,4 +11,7 @@ export class CreateGroupDTO {
   @IsArray()
   @Validate(IsValidPermissions)
   permissions: Permission[];
+  @IsOptional()
+  @IsBoolean()
+  default?: boolean;
 }

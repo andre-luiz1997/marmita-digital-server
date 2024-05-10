@@ -22,6 +22,11 @@ export class MongoRepository<T extends Entity> extends Repository<T> {
     return item;
   }
 
+  async updateMany(filter: any, data: Partial<T>): Promise<T[]> {
+    await this.model.updateMany(filter, data, {new: true});
+    return this.findMany(filter);
+  }
+
   async patch(_id: any, data: Partial<T>): Promise<T> {
     const item = await this.model.findByIdAndUpdate(_id, data, { new: true }).lean() as T;
     if (!item) throw new RecordNotFoundException();

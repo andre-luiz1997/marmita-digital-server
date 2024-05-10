@@ -9,7 +9,7 @@ import { PublicRoute } from 'shared/decorators';
 export class AuthController {
   constructor(
     private authService: AuthService,
-  ) {}
+  ) { }
 
   @Get('/identity-check')
   @PublicRoute()
@@ -17,22 +17,23 @@ export class AuthController {
     @Query('email') email?: string,
     @Query('mobile_phone') mobile_phone?: string,
   ) {
-    const data = await this.authService.identityCheck({
-      email,
-      mobile_phone,
-    })
-    return ControllerResponse.build({ data });
+    return ControllerResponse.build({
+      data: await this.authService.identityCheck({
+        email,
+        mobile_phone,
+      })
+    });
   }
 
   @Post('/signup')
   @PublicRoute()
   async signup(@Body() data: CreateUserDTO) {
-    return this.authService.signup(data);
+    return ControllerResponse.build({ data: await this.authService.signup(data) });
   }
 
   @Post('/signin')
   @PublicRoute()
   async signin(@Body() data: SigninDTO) {
-    return this.authService.signin(data);
+    return ControllerResponse.build({ data: await this.authService.signin(data) });
   }
 }

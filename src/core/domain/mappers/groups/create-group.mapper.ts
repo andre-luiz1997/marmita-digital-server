@@ -8,6 +8,7 @@ export class CreateGroupMapper extends Mapper<CreateGroupDTO, GroupEntity> {
     const group = new GroupEntity();
     group.name = param.name;
     group.permissions = param.permissions;
+    group.default = param.default;
     group.createdAt = new Date();
     return group;
   }
@@ -15,6 +16,7 @@ export class CreateGroupMapper extends Mapper<CreateGroupDTO, GroupEntity> {
     const group = new CreateGroupDTO();
     group.name = param.name;
     group.permissions = param.permissions;
+    group.default = param.default;
     return group;
   }
 }

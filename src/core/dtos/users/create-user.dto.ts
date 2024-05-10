@@ -1,6 +1,8 @@
-import { Transform } from "class-transformer";
+import { Transform, Type } from "class-transformer";
 import { IsEmail, IsNotEmpty, IsOptional, IsString, MinLength } from "class-validator";
 import {hashSync} from 'bcrypt';
+import { Phone } from "core/domain/entities";
+import { PhoneDTO } from "../phone.dto";
 
 export class CreateUserDTO {
   @IsOptional()
@@ -10,17 +12,20 @@ export class CreateUserDTO {
   @IsString()
   @MinLength(3)
   name: string;
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
   @IsEmail()
-  email: string;
+  email?: string;
+  @IsOptional()
+  @Type(() => PhoneDTO)
+  mobile_phone?: Phone;
   @IsNotEmpty()
   @IsString()
   @MinLength(8)
   @Transform(({value}) => hashSync(value,10))
   password: string;
 
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
-  groupId: string;
+  groupId?: string;
 }
