@@ -2,6 +2,7 @@ export enum GROUPS {
   ADMIN = 'ADMIN',
   TENANT_ADMIN = 'TENANT_ADMIN',
   USER = 'USER',
+  CUSTOMER = 'CUSTOMER',
 }
 
 export enum PERMISSIONS {

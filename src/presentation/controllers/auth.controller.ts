@@ -1,5 +1,5 @@
 import { CreateUserDTO, SigninDTO } from '@/core/dtos';
-import { Controller, Post, Body, Query, Get, Req } from '@nestjs/common';
+import { Controller, Post, Body, Query, Get, Req, ParseBoolPipe } from '@nestjs/common';
 import { ControllerResponse } from 'presentation/response';
 import { AuthService } from 'services/auth.service';
 import { PublicRoute } from 'shared/decorators';
@@ -17,11 +17,14 @@ export class AuthController {
   async identityCheck(
     @Query('email') email?: string,
     @Query('mobile_phone') mobile_phone?: string,
+    @Query('isTenantAdmin') isTenantAdmin: any = false,
   ) {
+    if(typeof isTenantAdmin === 'string') isTenantAdmin = isTenantAdmin === 'true';
     return ControllerResponse.build({
       data: await this.authService.identityCheck({
         email,
         mobile_phone,
+        isTenantAdmin
       })
     });
   }

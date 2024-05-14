@@ -35,7 +35,6 @@ export class JwtAuthGuard implements CanActivate {
       const payload = this.jwtService.verify(type == 'Bearer' ? bearer : token);
       return this.userService.findOneById(payload._id);
     } catch (error) {
-      console.log('🚀 ~ file: jwt-auth.guard.ts:39 ~ JwtAuthGuard ~ authenticate ~ error 🚀 ➡➡', error);
       return null;
     }
   }
