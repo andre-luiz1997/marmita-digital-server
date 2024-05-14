@@ -1,6 +1,7 @@
 import { IsNotEmpty, IsString, IsEmail, IsOptional } from "class-validator";
+import { DTO } from "core/base";
 
-export class SigninDTO {
+export class SigninDTO extends DTO {
   @IsOptional()
   @IsString()
   @IsEmail()

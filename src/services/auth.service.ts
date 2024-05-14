@@ -7,6 +7,7 @@ import { compareSync } from "bcrypt";
 import { isEmpty } from "class-validator";
 import { FindUserUseCase } from "./use-cases";
 import { UserEntity } from "core/domain/entities";
+import { JWT_EXPIRATION, JWT_SECRET } from "@/constants";
 
 @Injectable()
 export class AuthService {
@@ -38,7 +39,9 @@ export class AuthService {
     if (!existingUser) throw new RecordNotFoundException('user', 'email', data.email);
     if (!compareSync(data.password, existingUser.password)) throw new UnauthorizedException();
     return {
-      access_token: this.jwtService.sign(this.getJWTPayload(existingUser))
+      access_token: this.jwtService.sign(this.getJWTPayload(existingUser), {
+        expiresIn: JWT_EXPIRATION
+      })
     };
   }
 

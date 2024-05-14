@@ -11,8 +11,9 @@ export const UserMongoModel = new mongoose.Schema<UserEntity>({
   mobile_phone: {type: String, required: false},
   password: {type: String, required: true},
   group: {type: String, enum: GROUPS, required: true},
-  status: {type: String, enum: STATUSES, required: true},
+  status: {type: String, enum: STATUSES, required: true, default: 'active'},
   tenant: {type: mongoose.Types.ObjectId, ref: 'Tenant', required: false},
+  deletedAt: {type: Date, default: null},
 },{
   timestamps: true,
 })

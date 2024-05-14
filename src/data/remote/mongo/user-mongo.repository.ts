@@ -16,7 +16,8 @@ export class UserMongoRepository extends MongoRepository<UserEntity> implements 
   }
 
   async create(data: UserEntity): Promise<UserEntity> {
-    const existingUser = await this.findOne({ email: data.email });
+    console.log('🚀 ~ file: user-mongo.repository.ts:19 ~ UserMongoRepository ~ create ~ data 🚀 ➡➡', data);
+    const existingUser = await this.findOne({ email: data.email, tenant: data.tenant?._id });
     if (existingUser) throw new ConflictException('user', 'email', data.email);
     return super.create(data);
   }

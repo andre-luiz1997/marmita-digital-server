@@ -15,6 +15,9 @@
     "/src/core/domain/entities",
     "/src/core/repositories",
     "/src/shared/types",
-    "/src/services/use-cases/tentants"
+    "/src/services/use-cases/tentants",
+    "/src/core/dtos/tenants",
+    "/src/core/domain/mappers/tenants",
+    "/src/shared/middlewares"
   ]
 }

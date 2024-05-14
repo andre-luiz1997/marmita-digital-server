@@ -1,10 +1,12 @@
 import { Transform, Type } from "class-transformer";
-import { IsEmail, IsNotEmpty, IsOptional, IsString, MinLength } from "class-validator";
+import { IsEmail, IsEnum, IsNotEmpty, IsOptional, IsString, MinLength } from "class-validator";
 import {hashSync} from 'bcrypt';
 import { Phone } from "core/domain/entities";
 import { PhoneDTO } from "../phone.dto";
+import { DTO } from "core/base";
+import { GROUPS } from "@/permissions";
 
-export class CreateUserDTO {
+export class CreateUserDTO extends DTO {
   @IsOptional()
   _id?: string;
 
@@ -27,5 +29,6 @@ export class CreateUserDTO {
 
   @IsOptional()
   @IsString()
-  groupId?: string;
+  @IsEnum(GROUPS)
+  group?: GROUPS;
 }

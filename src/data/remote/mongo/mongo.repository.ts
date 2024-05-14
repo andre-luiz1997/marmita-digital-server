@@ -51,7 +51,7 @@ export class MongoRepository<T extends Entity> extends Repository<T> {
 
   async delete(_id: any): Promise<void> {
     const item = await this.model.findByIdAndUpdate(_id, {
-      deletedAt: true
+      deletedAt: new Date()
     }, { new: true }).lean();
     if (!item) throw new RecordNotFoundException();
     return;

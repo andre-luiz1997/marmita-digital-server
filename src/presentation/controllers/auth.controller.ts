@@ -1,8 +1,9 @@
 import { CreateUserDTO, SigninDTO } from '@/core/dtos';
-import { Controller, Post, Body, Query, Get } from '@nestjs/common';
+import { Controller, Post, Body, Query, Get, Req } from '@nestjs/common';
 import { ControllerResponse } from 'presentation/response';
 import { AuthService } from 'services/auth.service';
 import { PublicRoute } from 'shared/decorators';
+import { CustomRequest } from 'shared/types';
 
 
 @Controller('/auth')
@@ -27,13 +28,24 @@ export class AuthController {
 
   @Post('/signup')
   @PublicRoute()
-  async signup(@Body() data: CreateUserDTO) {
+  async signup(
+    @Req() req: CustomRequest,
+    @Body() data: CreateUserDTO
+  ) {
+    if(req.tenant) {
+      data.tenant = req.tenant;
+    }
     return ControllerResponse.build({ data: await this.authService.signup(data) });
   }
 
   @Post('/signin')
   @PublicRoute()
-  async signin(@Body() data: SigninDTO) {
+  async signin(
+    @Req() req: CustomRequest,
+    @Body() data: SigninDTO) {
+    if(req.tenant) {
+      data.tenant = req.tenant;
+    }
     return ControllerResponse.build({ data: await this.authService.signin(data) });
   }
 }

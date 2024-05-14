@@ -1,8 +1,9 @@
 import { Transform } from "class-transformer";
 import { IsEmail, IsNotEmpty, IsOptional, IsString, IsStrongPassword, MinLength } from "class-validator";
 import {hashSync} from 'bcrypt';
+import { DTO } from "core/base";
 
-export class UpdateUserDTO {
+export class UpdateUserDTO extends DTO {
   @IsOptional()
   @IsString()
   @MinLength(3)

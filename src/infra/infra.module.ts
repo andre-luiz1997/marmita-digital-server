@@ -1,10 +1,10 @@
-import { Module } from '@nestjs/common';
+import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
 import { JwtModule } from '@nestjs/jwt';
 import { DB_HOST, DB_NAME, DB_PASS, DB_PORT, DB_USER, ENTITIES, JWT_EXPIRATION, JWT_SECRET } from '@/constants';
 import { APP_GUARD } from '@nestjs/core';
 import { JwtAuthGuard } from '@/shared/guards';
 import { PermissionsGuard } from '@/shared/guards/permission.guard';
-import { UserController, AuthController } from '@/presentation/controllers';
+import { UserController, AuthController, TenantController } from '@/presentation/controllers';
 import { MongooseModule } from '@nestjs/mongoose';
 import { UserMongoModel } from './mongo/models';
 import { repositoriesProviders } from './mongo/repository-providers';
@@ -12,6 +12,8 @@ import { UsersService } from '@/services/users.service';
 import { AuthService } from 'services/auth.service';
 import { useCasesProviders } from 'services/use-cases/use-cases.providers';
 import { TenantMongoModel } from './mongo/models/tenant-mongo.model';
+import { TenantsService } from 'services/tenants.service';
+import { TenantsMiddleware } from 'shared/middlewares';
 
 function getMongooseConnectionString() {
     const user = DB_USER ? `${DB_USER}:${DB_PASS}@` : '';
@@ -37,6 +39,7 @@ function getMongooseConnectionString() {
         ...useCasesProviders,
         UsersService,
         AuthService,
+        TenantsService,
         {
             provide: APP_GUARD,
             useClass: JwtAuthGuard,
@@ -45,10 +48,16 @@ function getMongooseConnectionString() {
             provide: APP_GUARD,
             useClass: PermissionsGuard,
         },
+        TenantsMiddleware
     ],
     controllers: [
         AuthController,
-        UserController
+        UserController,
+        TenantController
     ],
 })
-export class InfraModule { }
+export class InfraModule implements NestModule {
+    configure(consumer: MiddlewareConsumer) {
+        consumer.apply(TenantsMiddleware).forRoutes('*');
+    }
+}
