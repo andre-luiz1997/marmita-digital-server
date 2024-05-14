@@ -1,17 +1,26 @@
-export class ControllerResponse {
-  private msg?: string;
-  private data?: any;
+interface ControllerResponseProps {
+  msg?: string;
+  data?: any;
+  count?: number;
+}
+
+export class ControllerResponse implements ControllerResponseProps {
+  msg?: string;
+  data?: any;
+  count?: number;
 
   constructor(
     msg?: string,
-    data?: any
+    data?: any,
+    count?: number
   ) {
     this.msg = msg;
     this.data = data;
+    this.count = count;
   }
 
   static build(
-    { msg, data }: { msg?: string; data?: any }
+    { msg, data, count }: ControllerResponseProps
   ) {
     return new ControllerResponse(msg, data);
   }

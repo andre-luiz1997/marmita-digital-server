@@ -3,6 +3,7 @@ import { Injectable } from '@nestjs/common';
 import { UserEntity, UserWithoutPassword } from 'core/domain/entities';
 import { UpdateUserDTO } from 'core/dtos/users/update-user.dto';
 import { CreateUserUseCase, FindAllUsersUseCase, FindUserByIdUseCase, FindUserUseCase, UpdateUserUseCase } from './use-cases';
+import { PaginationProps } from 'shared/types';
 
 
 @Injectable()
@@ -32,10 +33,11 @@ export class UsersService {
     return this.findUserByIdUseCase.execute(_id, omitPassword);
   }
 
-  async findAll(): Promise<UserEntity[]>;
-  async findAll(omitPassword?: true): Promise<UserWithoutPassword[]>;
-  async findAll(omitPassword = true) {
-    return this.findAllUsersUseCase.execute(omitPassword);
+  async findAll(props?: PaginationProps & { omitPassword?: boolean }): Promise<{ data: UserEntity[], count: number }>;
+  async findAll(props?: PaginationProps & { omitPassword?: false }): Promise<{ data: UserEntity[], count: number }>;
+  async findAll(props?: PaginationProps & { omitPassword?: true }): Promise<{ data: UserWithoutPassword[], count: number }>;
+  async findAll(props: PaginationProps & { omitPassword?: boolean }) {
+    return this.findAllUsersUseCase.execute(props);
   }
 
   async update(id: string, data: UpdateUserDTO) {

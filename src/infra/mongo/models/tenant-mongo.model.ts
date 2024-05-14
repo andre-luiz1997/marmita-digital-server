@@ -1,6 +1,7 @@
 import { TenantEntity } from "core/domain/entities";
 import mongoose from "mongoose";
 import { STATUSES } from "shared/types";
+import { softDeletePlugin } from "soft-delete-plugin-mongoose";
 
 export const TenantMongoModel = new mongoose.Schema<TenantEntity>({
   _id: mongoose.Types.ObjectId,
@@ -10,3 +11,5 @@ export const TenantMongoModel = new mongoose.Schema<TenantEntity>({
 },{
   timestamps: true,
 })
+
+TenantMongoModel.plugin(softDeletePlugin)

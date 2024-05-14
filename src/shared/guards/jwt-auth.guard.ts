@@ -32,7 +32,9 @@ export class JwtAuthGuard implements CanActivate {
   private authenticate(token: string) {
     try {
       const [type, bearer] = token.split(' ') ?? [];
-      const payload = this.jwtService.verify(type == 'Bearer' ? bearer : token);
+      const payload = this.jwtService.verify(type == 'Bearer' ? bearer : token, {
+        secret: process.env.JWT_SECRET
+      });
       return this.userService.findOneById(payload._id);
     } catch (error) {
       return null;

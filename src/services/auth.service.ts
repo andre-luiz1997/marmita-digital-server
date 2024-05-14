@@ -55,8 +55,8 @@ export class AuthService {
 
   async identityCheck(data: IdentityCheckDTO) {
     const filter: any = {}
-    if (isEmpty(data.email)) filter.email = data.email;
-    if (isEmpty(data.mobile_phone)) filter.mobile_phone = data.mobile_phone;
+    if (!isEmpty(data.email)) filter.email = data.email;
+    if (!isEmpty(data.mobile_phone)) filter.mobile_phone = data.mobile_phone;
     if (data.isTenantAdmin) filter.group = GROUPS.TENANT_ADMIN;
 
     const item = await this.findUserUseCase.execute(data);

@@ -1,14 +1,32 @@
 import { RecordNotFoundException } from "@/shared/exceptions";
 import { Entity, Repository } from "@/core/base";
 import { Injectable } from "@nestjs/common";
-import { Model, Types } from "mongoose";
+import { Model, Types, Document, Query } from "mongoose";
+import { SoftDeleteModel } from "soft-delete-plugin-mongoose";
+import { PaginationProps } from "shared/types";
 
 @Injectable()
 export class MongoRepository<T extends Entity> extends Repository<T> {
   constructor(
-    protected model: Model<T>
+    protected model: SoftDeleteModel<any>
   ) {
     super();
+  }
+
+  preparePagination(query: Query<any[], any, any, any, "find">, props: PaginationProps) {
+    if (props.limit) query.limit(props.limit);
+    if (props.skip) query.skip(props.skip);
+    if (props.sortBy) {
+      const sortObj: any = {};
+      if (typeof props.sortBy === 'string') sortObj[props.sortBy] = props.sortOrder ?? -1;
+      for (let index = 0; index < props.sortBy.length; index++) {
+        const sortBy = props.sortBy[index];
+        sortObj[sortBy] = props.sortOrder[index] ?? -1;
+      }
+      if (!Object.values(sortObj)?.length) sortObj['createdAt'] = -1;
+      query.sort(sortObj);
+    }
+    return query;
   }
 
   create(data: T): Promise<T> {
@@ -37,8 +55,11 @@ export class MongoRepository<T extends Entity> extends Repository<T> {
     return this.model.findById(_id).lean();
   }
 
-  findAll(): Promise<T[]> {
-    return this.model.find().lean();
+  async findAll(props?: PaginationProps) {
+    return {
+      data: await this.model.find().exec(),
+      count: await this.model.countDocuments()
+    };
   }
 
   findOne(filter: any): Promise<T> {
@@ -50,9 +71,10 @@ export class MongoRepository<T extends Entity> extends Repository<T> {
   }
 
   async delete(_id: any): Promise<void> {
-    const item = await this.model.findByIdAndUpdate(_id, {
-      deletedAt: new Date()
-    }, { new: true }).lean();
+    const item = await this.model.softDelete(_id);
+    // const item = await this.model.findByIdAndUpdate(_id, {
+    //   deletedAt: new Date()
+    // }, { new: true }).lean();
     if (!item) throw new RecordNotFoundException();
     return;
   }

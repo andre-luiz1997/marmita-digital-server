@@ -1,7 +1,8 @@
 import { UserEntity } from "@/core/domain/entities";
 import { GROUPS } from "@/permissions";
 import { STATUSES } from "@/shared/types";
-import mongoose from "mongoose";
+import mongoose, { Document } from "mongoose";
+import { softDeletePlugin } from "soft-delete-plugin-mongoose";
 
 
 export const UserMongoModel = new mongoose.Schema<UserEntity>({
@@ -17,3 +18,6 @@ export const UserMongoModel = new mongoose.Schema<UserEntity>({
 },{
   timestamps: true,
 })
+
+
+UserMongoModel.plugin(softDeletePlugin)
