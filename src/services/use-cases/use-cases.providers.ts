@@ -1,7 +1,7 @@
-import { groupsUseCasesProviders } from "./groups";
+import { tenantsUseCasesProviders } from "./tenants";
 import { usersUseCasesProviders } from "./users";
 
 export const useCasesProviders = [
   ...usersUseCasesProviders,
-  ...groupsUseCasesProviders
+  ...tenantsUseCasesProviders
 ]

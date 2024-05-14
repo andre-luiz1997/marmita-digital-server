@@ -1,3 +1,3 @@
-export * from './groups';
+export * from './tenants';
 export * from './use-cases.providers';
 export * from './users';

@@ -5,15 +5,13 @@ import { APP_GUARD } from '@nestjs/core';
 import { JwtAuthGuard } from '@/shared/guards';
 import { PermissionsGuard } from '@/shared/guards/permission.guard';
 import { UserController, AuthController } from '@/presentation/controllers';
-import { GroupController } from '@/presentation/controllers/group.controller';
 import { MongooseModule } from '@nestjs/mongoose';
-import { GroupMongoModel, UserMongoModel } from './mongo/models';
-import { GroupEntity, UserEntity } from '@/core/domain/entities';
+import { UserMongoModel } from './mongo/models';
 import { repositoriesProviders } from './mongo/repository-providers';
 import { UsersService } from '@/services/users.service';
-import { GroupsService } from '@/services/group.service';
 import { AuthService } from 'services/auth.service';
 import { useCasesProviders } from 'services/use-cases/use-cases.providers';
+import { TenantMongoModel } from './mongo/models/tenant-mongo.model';
 
 function getMongooseConnectionString() {
     const user = DB_USER ? `${DB_USER}:${DB_PASS}@` : '';
@@ -25,8 +23,8 @@ function getMongooseConnectionString() {
     imports: [
         MongooseModule.forRoot(getMongooseConnectionString()),
         MongooseModule.forFeature([
-            { name: ENTITIES.GROUP, schema: GroupMongoModel },
             { name: ENTITIES.USER, schema: UserMongoModel },
+            { name: ENTITIES.TENANT, schema: TenantMongoModel },
         ]),
         JwtModule.register({
             global: true,
@@ -38,7 +36,6 @@ function getMongooseConnectionString() {
         ...repositoriesProviders,
         ...useCasesProviders,
         UsersService,
-        GroupsService,
         AuthService,
         {
             provide: APP_GUARD,
@@ -51,7 +48,6 @@ function getMongooseConnectionString() {
     ],
     controllers: [
         AuthController,
-        GroupController,
         UserController
     ],
 })

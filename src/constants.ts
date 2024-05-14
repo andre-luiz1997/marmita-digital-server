@@ -12,29 +12,24 @@ export const DB_PASS = process.env.DB_PASS || '';
 
 export enum PROVIDERS {
   DATABASE = 'DATABASE_CONNECTION',
-  GROUP = 'GROUP',
   USER = 'USER',
+  TENANT = 'TENANT',
 }
 
 export enum ENTITIES {
   USER = 'users',
-  GROUP = 'groups',
+  TENANT = 'tenants',
 }
 
 export enum SERVICES {
   AUTH = 'AuthService',
   USER = 'UserService',
-  GROUP = 'GroupService',
+  TENANT = 'TenantService',
 }
 
 export enum REPOSITORIES {
   USER = 'UserRepository',
-  GROUP = 'GroupRepository',
-}
-
-export enum ROLES {
-  ADMIN = 'admin',
-  USER = 'user',
+  TENANT = 'TenantRepository',
 }
 
 export const JWT_SECRET = process.env.JWT_SECRET;

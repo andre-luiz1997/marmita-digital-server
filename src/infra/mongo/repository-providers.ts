@@ -1,7 +1,7 @@
 import { UserMongoRepository } from "@/data/remote/mongo/user-mongo.repository";
 import { UserRepository } from "@/core/repositories/user.repository";
-import { GroupRepository } from "@/core/repositories/group.repository";
-import { GroupMongoRepository } from "@/data/remote/mongo/group-mongo.repository";
+import { TenantRepository } from "core/repositories";
+import { TenantMongoRepository } from "data/remote/mongo/tenant-mongo.repository";
 
 export const repositoriesProviders = [
   {
@@ -9,7 +9,7 @@ export const repositoriesProviders = [
     useClass: UserMongoRepository
   },
   {
-    provide: GroupRepository,
-    useClass: GroupMongoRepository
-  },
+    provide: TenantRepository,
+    useClass: TenantMongoRepository
+  }
 ]
