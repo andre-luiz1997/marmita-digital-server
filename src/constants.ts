@@ -14,22 +14,26 @@ export enum PROVIDERS {
   DATABASE = 'DATABASE_CONNECTION',
   USER = 'USER',
   TENANT = 'TENANT',
+  PLAN = 'PLAN',
 }
 
 export enum ENTITIES {
   USER = 'users',
   TENANT = 'tenants',
+  PLAN = 'plans',
 }
 
 export enum SERVICES {
   AUTH = 'AuthService',
   USER = 'UserService',
   TENANT = 'TenantService',
+  PLAN = 'PlanService',
 }
 
 export enum REPOSITORIES {
   USER = 'UserRepository',
   TENANT = 'TenantRepository',
+  PLAN = 'PlanRepository',
 }
 
 export const JWT_SECRET = process.env.JWT_SECRET;

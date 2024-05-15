@@ -18,6 +18,8 @@
     "/src/services/use-cases/tentants",
     "/src/core/dtos/tenants",
     "/src/core/domain/mappers/tenants",
-    "/src/shared/middlewares"
+    "/src/shared/middlewares",
+    "/src/services/use-cases/plans",
+    "/src/core/dtos/plans"
   ]
 }

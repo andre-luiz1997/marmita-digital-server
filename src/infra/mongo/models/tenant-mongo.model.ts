@@ -1,4 +1,3 @@
-import { ENTITIES } from "@/constants";
 import { TenantEntity } from "core/domain/entities";
 import mongoose from "mongoose";
 import { STATUSES } from "shared/types";

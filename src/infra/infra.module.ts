@@ -4,7 +4,7 @@ import { DB_HOST, DB_NAME, DB_PASS, DB_PORT, DB_USER, ENTITIES, JWT_EXPIRATION, 
 import { APP_GUARD } from '@nestjs/core';
 import { JwtAuthGuard } from '@/shared/guards';
 import { PermissionsGuard } from '@/shared/guards/permission.guard';
-import { UserController, AuthController, TenantController } from '@/presentation/controllers';
+import { UserController, AuthController, TenantController, PlanController } from '@/presentation/controllers';
 import { MongooseModule } from '@nestjs/mongoose';
 import { UserMongoModel } from './mongo/models';
 import { repositoriesProviders } from './mongo/repository-providers';
@@ -14,6 +14,8 @@ import { useCasesProviders } from 'services/use-cases/use-cases.providers';
 import { TenantMongoModel } from './mongo/models/tenant-mongo.model';
 import { TenantsService } from 'services/tenants.service';
 import { TenantsMiddleware } from 'shared/middlewares';
+import { PlanMongoModel } from './mongo/models/plan-mongo.model';
+import { PlansService } from 'services/plans.service';
 
 function getMongooseConnectionString() {
     const user = DB_USER ? `${DB_USER}:${DB_PASS}@` : '';
@@ -27,6 +29,7 @@ function getMongooseConnectionString() {
         MongooseModule.forFeature([
             { name: ENTITIES.USER, schema: UserMongoModel },
             { name: ENTITIES.TENANT, schema: TenantMongoModel },
+            { name: ENTITIES.PLAN, schema: PlanMongoModel },
         ]),
         JwtModule.register({
             global: true,
@@ -40,6 +43,7 @@ function getMongooseConnectionString() {
         UsersService,
         AuthService,
         TenantsService,
+        PlansService,
         {
             provide: APP_GUARD,
             useClass: JwtAuthGuard,
@@ -53,7 +57,8 @@ function getMongooseConnectionString() {
     controllers: [
         AuthController,
         UserController,
-        TenantController
+        TenantController,
+        PlanController
     ],
 })
 export class InfraModule implements NestModule {
