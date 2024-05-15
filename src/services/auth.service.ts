@@ -60,7 +60,7 @@ export class AuthService {
     if (!isEmpty(data.mobile_phone)) filter.mobile_phone = data.mobile_phone;
     if (data.isTenantAdmin) filter.group = GROUPS.TENANT_ADMIN;
 
-    const item = await this.findUserUseCase.execute(data);
+    const item = await this.findUserUseCase.execute(filter);
     return {
       data: item?._id
     };

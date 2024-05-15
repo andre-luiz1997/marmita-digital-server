@@ -56,7 +56,7 @@ export class UserMongoRepository extends MongoRepository<UserEntity> implements 
     };
   }
 
-  findOne(filter: any, omitPassword?: boolean): Promise<UserEntity> {
+  async findOne(filter: any, omitPassword?: boolean): Promise<UserEntity> {
     return this.model.findOne(filter).populate({path: 'tenant'}).select(`${omitPassword ? '-' : '+'}password`).lean();
   }
 

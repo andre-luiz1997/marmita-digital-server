@@ -2,28 +2,33 @@ import { Body, Controller, Delete, Get, Param, Patch, Post } from '@nestjs/commo
 import { CreateTenantDTO, UpdateTenantDTO } from 'core/dtos';
 import { ControllerResponse } from 'presentation/response';
 import { TenantsService } from 'services/tenants.service';
+import { Pagination } from 'shared/decorators/pagination.decorator';
+import { PaginationProps } from 'shared/types';
 
 @Controller('/tenants')
 export class TenantController {
   constructor(
     private readonly tenantsService: TenantsService
-  ) {}
+  ) { }
 
   @Get('/:id')
   async findOneById(@Param('id') id: string) {
-    return ControllerResponse.build({data: await this.tenantsService.findOneById(id)});
+    return ControllerResponse.build({ data: await this.tenantsService.findOneById(id) });
   }
 
   @Get()
-  async find() {
-    return ControllerResponse.build({data: await this.tenantsService.findAll()});
+  async find(
+    @Pagination() pagination: PaginationProps
+  ) {
+    const { data, count } = await this.tenantsService.findAll(pagination);
+    return ControllerResponse.build({ data, count });
   }
 
   @Post()
   async create(
     @Body() data: CreateTenantDTO
   ) {
-    return ControllerResponse.build({data: await this.tenantsService.create(data)});
+    return ControllerResponse.build({ data: await this.tenantsService.create(data) });
   }
 
   @Patch('/:id')
@@ -31,11 +36,11 @@ export class TenantController {
     @Param('id') id: string,
     @Body() data: UpdateTenantDTO
   ) {
-    return ControllerResponse.build({data: await this.tenantsService.update(id, data)});
+    return ControllerResponse.build({ data: await this.tenantsService.update(id, data) });
   }
 
   @Delete('/:id')
   async delete(@Param('id') id: string) {
-    return ControllerResponse.build({data: await this.tenantsService.delete(id)});
+    return ControllerResponse.build({ data: await this.tenantsService.delete(id) });
   }
 }

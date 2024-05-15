@@ -7,6 +7,7 @@ import { FindTenantByIdUseCase } from './use-cases/tenants/find-tenant-by-id.use
 import { FindAllTenantsUseCase } from './use-cases/tenants/find-all-tenants.use-case';
 import { UpdateTenantUseCase } from './use-cases/tenants/update-tenant.use-case';
 import { DeleteTenantUseCase } from './use-cases/tenants/delete-tenant.use-case';
+import { PaginationProps } from 'shared/types';
 
 @Injectable()
 export class TenantsService {
@@ -31,8 +32,8 @@ export class TenantsService {
     return this.findTenantByIdUseCase.execute(_id);
   }
 
-  async findAll() {
-    return this.findAllTenantsUseCase.execute();
+  async findAll(pagination?: PaginationProps) {
+    return this.findAllTenantsUseCase.execute(pagination);
   }
 
   async update(_id: any, data: UpdateTenantDTO) {
