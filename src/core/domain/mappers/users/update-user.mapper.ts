@@ -6,12 +6,13 @@ export class UpdateUserMapper extends Mapper<UpdateUserDTO, UserEntity> {
 
   mapFrom(param: UpdateUserDTO): UserEntity {
     const user = new UserEntity();
-    user.email = param.email;
-    user.password = param.password;
-    user.name = param.name;
-    // user.group = param.group;
-    user.status = 'active';
-    user.createdAt = new Date();
+    if(param.email) user.email = param.email;
+    if(param.password) user.password = param.password;
+    if(param.name) user.name = param.name;
+    if(param.group) user.group = param.group;
+    if(param.mobile_phone) user.mobile_phone = param.mobile_phone;
+    if(param.status) user.status = param.status;
+    if(param.tenant) user.tenant = param.tenant;
     return user;
   }
   mapTo(param: UserEntity): UpdateUserDTO {
@@ -19,6 +20,9 @@ export class UpdateUserMapper extends Mapper<UpdateUserDTO, UserEntity> {
     user.email = param.email;
     user.password = param.password;
     user.name = param.name;
+    user.group = param.group;
+    user.mobile_phone = param.mobile_phone;
+    user.tenant = param.tenant;
     return user;
   }
 }

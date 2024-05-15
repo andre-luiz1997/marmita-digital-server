@@ -9,7 +9,7 @@ export class TenantsMiddleware implements NestMiddleware {
     private readonly tenantsService: TenantsService,
   ) {}
 
-  async use(req: CustomRequest, res: Response, next: Function) {
+  async use(req: CustomRequest, res: Response, next: () => void) {
     const tenantId = req.headers['x-tenant-id'] as string;
     if(!tenantId) {
       next();

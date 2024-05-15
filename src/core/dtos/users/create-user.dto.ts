@@ -5,6 +5,7 @@ import { Phone } from "core/domain/entities";
 import { PhoneDTO } from "../phone.dto";
 import { DTO } from "core/base";
 import { GROUPS } from "@/permissions";
+import { STATUSES, Status } from "shared/types";
 
 export class CreateUserDTO extends DTO {
   @IsOptional()
@@ -24,11 +25,16 @@ export class CreateUserDTO extends DTO {
   @IsNotEmpty()
   @IsString()
   @MinLength(8)
-  @Transform(({value}) => hashSync(value,10))
+  @Transform(({value}) => value ? hashSync(value,10) : undefined)
   password: string;
 
   @IsOptional()
   @IsString()
   @IsEnum(GROUPS)
   group?: GROUPS;
+
+  @IsOptional()
+  @IsString()
+  @IsEnum(STATUSES)
+  status?: Status;
 }

@@ -26,6 +26,52 @@ export class MongoRepository<T extends Entity> extends Repository<T> {
       if (!Object.values(sortObj)?.length) sortObj['createdAt'] = -1;
       query.sort(sortObj);
     }
+    if (props.filters) {
+      props.filters.forEach(filter => {
+        switch (filter.operator) {
+          case 'LIKE': {
+            query.where(filter.fields[0]).equals(filter.value);
+            break;
+          }
+          case '%%': {
+            query.where(filter.fields[0]).regex(new RegExp(`${filter.value}`, 'i'));
+            break;
+          }
+          case '%_': {
+            query.where(filter.fields[0]).regex(new RegExp(`^${filter.value}`, 'i'));
+            break;
+          }
+          case '_%': {
+            query.where(filter.fields[0]).regex(new RegExp(`${filter.value}$`, 'i'));
+            break;
+          }
+          case 'IN': {
+            const value = Array.isArray(filter.value) ? filter.value : [filter.value];
+            query.where(filter.fields[0]).in(value);
+            break;
+          }
+          case 'NOT IN': {
+            const value = Array.isArray(filter.value) ? filter.value : [filter.value];
+            query.where(filter.fields[0]).nin(value);
+            break;
+          }
+          case 'IS NULL': {
+            query.where(filter.fields[0]).exists(false).or([{ [filter.fields[0]]: null }]);
+            break;
+          }
+          case 'IS NOT NULL': {
+            query.where(filter.fields[0]).exists(true).or([{ [filter.fields[0]]: { $ne: null } }]);
+            break;
+          }
+          case 'BETWEEN': {
+            query.where(filter.fields[0]).gte(filter.value[0]).lte(filter.value[1]);
+            break;
+          }
+          default:
+            break;
+        }
+      });
+    }
     return query;
   }
 
@@ -41,7 +87,7 @@ export class MongoRepository<T extends Entity> extends Repository<T> {
   }
 
   async updateMany(filter: any, data: Partial<T>): Promise<T[]> {
-    await this.model.updateMany(filter, data, {new: true});
+    await this.model.updateMany(filter, data, { new: true });
     return this.findMany(filter);
   }
 
@@ -71,7 +117,7 @@ export class MongoRepository<T extends Entity> extends Repository<T> {
   }
 
   async delete(_id: any): Promise<void> {
-    const item = await this.model.softDelete(_id);
+    const item = await this.model.softDelete({ _id });
     // const item = await this.model.findByIdAndUpdate(_id, {
     //   deletedAt: new Date()
     // }, { new: true }).lean();

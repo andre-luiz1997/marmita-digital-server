@@ -7,7 +7,7 @@ export type FilterOperators = 'LIKE' | 'NOT LIKE' |
 
 export interface PaginationFilter {
   fields: string[];
-  value: string;
+  value: string | string[] | number | number[] | Date | Date[];
   operator: FilterOperators;
 }
 

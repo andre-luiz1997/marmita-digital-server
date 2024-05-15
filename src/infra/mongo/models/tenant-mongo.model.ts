@@ -1,3 +1,4 @@
+import { ENTITIES } from "@/constants";
 import { TenantEntity } from "core/domain/entities";
 import mongoose from "mongoose";
 import { STATUSES } from "shared/types";
@@ -10,6 +11,7 @@ export const TenantMongoModel = new mongoose.Schema<TenantEntity>({
   deletedAt: {type: Date, default: null},
 },{
   timestamps: true,
+
 })
 
 TenantMongoModel.plugin(softDeletePlugin)

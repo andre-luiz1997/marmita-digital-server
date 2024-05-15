@@ -13,6 +13,7 @@ export class CreateUserMapper extends Mapper<CreateUserDTO, UserEntity> {
     user.status = 'active';
     user.createdAt = new Date();
     user.tenant = param.tenant;
+    user.mobile_phone = param.mobile_phone;
     return user;
   }
   mapTo(param: UserEntity): CreateUserDTO {
@@ -21,6 +22,7 @@ export class CreateUserMapper extends Mapper<CreateUserDTO, UserEntity> {
     user.password = param.password;
     user.name = param.name;
     user.tenant = param.tenant;
+    user.mobile_phone = param.mobile_phone;
     return user;
   }
 }

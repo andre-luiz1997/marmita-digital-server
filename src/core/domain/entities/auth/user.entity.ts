@@ -1,9 +1,10 @@
 import { Entity } from "@/core/base";
 import { GROUPS } from "@/permissions";
+import { Phone } from "../phone";
 
 export class UserEntity extends Entity {
   public email: string;
-  public mobile_phone: string;
+  public mobile_phone: Phone;
   public password: string;
   public name: string;
   public group: GROUPS;

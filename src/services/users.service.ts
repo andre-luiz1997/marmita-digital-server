@@ -2,7 +2,7 @@ import { CreateUserDTO } from '@/core/dtos';
 import { Injectable } from '@nestjs/common';
 import { UserEntity, UserWithoutPassword } from 'core/domain/entities';
 import { UpdateUserDTO } from 'core/dtos/users/update-user.dto';
-import { CreateUserUseCase, FindAllUsersUseCase, FindUserByIdUseCase, FindUserUseCase, UpdateUserUseCase } from './use-cases';
+import { CreateUserUseCase, DeleteUserUseCase, FindAllUsersUseCase, FindUserByIdUseCase, FindUserUseCase, UpdateUserUseCase } from './use-cases';
 import { PaginationProps } from 'shared/types';
 
 
@@ -14,6 +14,7 @@ export class UsersService {
     private readonly findUserByIdUseCase: FindUserByIdUseCase,
     private readonly findUserUseCase: FindUserUseCase,
     private readonly findAllUsersUseCase: FindAllUsersUseCase,
+    private readonly deleteUserUseCase: DeleteUserUseCase,
   ) { }
 
   async create(data: CreateUserDTO) {
@@ -42,5 +43,9 @@ export class UsersService {
 
   async update(id: string, data: UpdateUserDTO) {
     return this.updateUserUseCase.execute(id, data);
+  }
+
+  async delete(id: string) {
+    return this.deleteUserUseCase.execute(id);
   }
 }

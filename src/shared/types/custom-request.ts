@@ -1,6 +1,7 @@
-import { TenantEntity } from "core/domain/entities";
+import { TenantEntity, UserEntity } from "core/domain/entities";
 import { Request } from "express";
 
 export interface CustomRequest extends Request {
-  tenant: TenantEntity;
+  user?: UserEntity;
+  tenant?: TenantEntity;
 }

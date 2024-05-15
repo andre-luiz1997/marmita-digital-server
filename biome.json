@@ -9,7 +9,8 @@
 			"recommended": true,
 			"style": {
 				"useImportType": "off",
-				"useEnumInitializers": "off"
+				"useEnumInitializers": "off",
+				"useLiteralEnumMembers": "off"
 			},
 			"complexity": {
         "noForEach": "off",
