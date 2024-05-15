@@ -1,4 +1,5 @@
 import { CreateUserDTO, SigninDTO } from '@/core/dtos';
+import { GROUP_PERMISSIONS } from '@/permissions';
 import { Controller, Post, Body, Query, Get, Req, ParseBoolPipe } from '@nestjs/common';
 import { ControllerResponse } from 'presentation/response';
 import { AuthService } from 'services/auth.service';
@@ -11,6 +12,16 @@ export class AuthController {
   constructor(
     private authService: AuthService,
   ) { }
+
+  @Get('permissions')
+  async getPermissions(
+    @Req() req: CustomRequest,
+  ) {
+    const user = req.user;
+    return ControllerResponse.build({
+      data: GROUP_PERMISSIONS[user.group]
+    });
+  }
 
   @Get('/identity-check')
   @PublicRoute()
