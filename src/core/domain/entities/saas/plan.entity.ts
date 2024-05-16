@@ -25,6 +25,8 @@ export interface PlanPricing {
 
 export class PlanEntity extends Entity {
   public name: string;
+  public description?: string;
+  public featured?: boolean;
   public status: string;
   public pricing: PlanPricing;
   public createdAt: Date;

@@ -4,7 +4,7 @@ import { DB_HOST, DB_NAME, DB_PASS, DB_PORT, DB_USER, ENTITIES, JWT_EXPIRATION, 
 import { APP_GUARD } from '@nestjs/core';
 import { JwtAuthGuard } from '@/shared/guards';
 import { PermissionsGuard } from '@/shared/guards/permission.guard';
-import { UserController, AuthController, TenantController, PlanController } from '@/presentation/controllers';
+import { UserController, AuthController, TenantController, PlanController, SubscriptionController } from '@/presentation/controllers';
 import { MongooseModule } from '@nestjs/mongoose';
 import { UserMongoModel } from './mongo/models';
 import { repositoriesProviders } from './mongo/repository-providers';
@@ -16,6 +16,8 @@ import { TenantsService } from 'services/tenants.service';
 import { TenantsMiddleware } from 'shared/middlewares';
 import { PlanMongoModel } from './mongo/models/plan-mongo.model';
 import { PlansService } from 'services/plans.service';
+import { SubscriptionMongoModel } from './mongo/models/subscription-mongo.model';
+import { SubscriptionsService } from 'services/subscriptions.service';
 
 function getMongooseConnectionString() {
     const user = DB_USER ? `${DB_USER}:${DB_PASS}@` : '';
@@ -30,6 +32,7 @@ function getMongooseConnectionString() {
             { name: ENTITIES.USER, schema: UserMongoModel },
             { name: ENTITIES.TENANT, schema: TenantMongoModel },
             { name: ENTITIES.PLAN, schema: PlanMongoModel },
+            { name: ENTITIES.SUBSCRIPTION, schema: SubscriptionMongoModel },
         ]),
         JwtModule.register({
             global: true,
@@ -44,6 +47,7 @@ function getMongooseConnectionString() {
         AuthService,
         TenantsService,
         PlansService,
+        SubscriptionsService,
         {
             provide: APP_GUARD,
             useClass: JwtAuthGuard,
@@ -58,8 +62,18 @@ function getMongooseConnectionString() {
         AuthController,
         UserController,
         TenantController,
-        PlanController
+        PlanController,
+        SubscriptionController
     ],
+    exports: [
+        ...repositoriesProviders,
+        ...useCasesProviders,
+        UsersService,
+        AuthService,
+        TenantsService,
+        PlansService,
+        SubscriptionsService,
+    ]
 })
 export class InfraModule implements NestModule {
     configure(consumer: MiddlewareConsumer) {

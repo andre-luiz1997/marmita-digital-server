@@ -9,12 +9,14 @@ import { PlanRepository } from "core/repositories";
 export class CreatePlanUseCase implements UseCase<PlanEntity> {
   constructor(
     private readonly planRepository: PlanRepository
-  ) {}
+  ) { }
 
-  execute(data: CreatePlanDTO): Promise<PlanEntity> {
+  async execute(data: CreatePlanDTO): Promise<PlanEntity> {
     const mapper = new CreatePlanMapper();
     const item = mapper.mapFrom(data);
-    return this.planRepository.create(item);
+    const plan = await this.planRepository.create(item);
+    if (plan.featured) await this.planRepository.updateMany({ featured: true, _id: { $ne: plan._id } }, { featured: false });
+    return plan;
   }
 
 }

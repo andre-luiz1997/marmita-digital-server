@@ -15,6 +15,7 @@ export class UpdatePlanUseCase implements UseCase<PlanEntity> {
     const mapper = new UpdatePlanMapper();
     const item = mapper.mapFrom(data);
     await this.repository.update(_id, item);
+    if (data.featured) await this.repository.updateMany({ featured: true, _id: { $ne: _id } }, { featured: false });
     return this.repository.findOneById(_id);
   }
 }

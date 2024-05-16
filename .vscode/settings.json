@@ -20,6 +20,9 @@
     "/src/core/domain/mappers/tenants",
     "/src/shared/middlewares",
     "/src/services/use-cases/plans",
-    "/src/core/dtos/plans"
+    "/src/core/dtos/plans",
+    "/src/core/domain/entities/saas",
+    "/src/core/dtos/subscriptions",
+    "/src/services/use-cases/subscriptions"
   ]
 }

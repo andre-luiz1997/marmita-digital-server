@@ -11,7 +11,7 @@ export class CreateTenantUseCase implements UseCase<TenantEntity> {
     private readonly tenantRepository: TenantRepository,
   ) {}
 
-  async execute(data: CreateTenantDTO): Promise<TenantEntity> {
+  async execute(data: CreateTenantDTO) {
     const mapper = new CreateTenantMapper();
     const item = mapper.mapFrom(data);
     const tenant = await this.tenantRepository.create(item);
