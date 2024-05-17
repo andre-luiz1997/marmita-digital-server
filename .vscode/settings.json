@@ -23,6 +23,12 @@
     "/src/core/dtos/plans",
     "/src/core/domain/entities/saas",
     "/src/core/dtos/subscriptions",
-    "/src/services/use-cases/subscriptions"
+    "/src/services/use-cases/subscriptions",
+    "/src/core/providers",
+    "/src/core/domain/entities/payment",
+    "/src/core/dtos/payments",
+    "/src/core/dtos/payments/transactions",
+    "/src/data/remote/adapters",
+    "/src/data/remote/adapters/payments"
   ]
 }
