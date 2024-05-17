@@ -4,7 +4,7 @@ import { DB_HOST, DB_NAME, DB_PASS, DB_PORT, DB_USER, ENTITIES, JWT_EXPIRATION, 
 import { APP_GUARD } from '@nestjs/core';
 import { JwtAuthGuard } from '@/shared/guards';
 import { PermissionsGuard } from '@/shared/guards/permission.guard';
-import { UserController, AuthController, TenantController, PlanController, SubscriptionController } from '@/presentation/controllers';
+import { UserController, AuthController, TenantController, PlanController, SubscriptionController, CryptoController } from '@/presentation/controllers';
 import { MongooseModule } from '@nestjs/mongoose';
 import { UserMongoModel } from './mongo/models';
 import { repositoriesProviders } from './mongo/repository-providers';
@@ -63,7 +63,8 @@ function getMongooseConnectionString() {
         UserController,
         TenantController,
         PlanController,
-        SubscriptionController
+        SubscriptionController,
+        CryptoController
     ],
     exports: [
         ...repositoriesProviders,

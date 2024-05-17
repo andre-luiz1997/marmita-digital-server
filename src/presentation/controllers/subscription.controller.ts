@@ -8,14 +8,14 @@ import { CustomRequest } from 'shared/types';
 export class SubscriptionController {
   constructor(
     private readonly subscriptionsService: SubscriptionsService
-  ) {}
+  ) { }
 
   @Post()
   async create(
     @Req() req: CustomRequest,
     @Body() data: CreateSubscriptionDTO
   ) {
-    if(req.tenant) {
+    if (req.tenant) {
       data.tenant = req.tenant;
     }
     return ControllerResponse.build({

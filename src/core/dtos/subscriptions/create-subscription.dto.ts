@@ -9,6 +9,7 @@ export class CreateSubscriptionDTO extends DTO {
   @Type(() => PartialType(PlanEntity))
   plan: Partial<PlanEntity>;
 
+  @IsString()
   @IsNotEmpty()
-  declare tenant: TenantEntity;
+  paymentToken: string;
 }

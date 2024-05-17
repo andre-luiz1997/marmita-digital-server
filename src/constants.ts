@@ -44,3 +44,19 @@ export const JWT_SECRET = process.env.JWT_SECRET;
 export const JWT_EXPIRATION = process.env.JWT_EXPIRATION;
 
 export const IS_PUBLIC_KEY = 'isPublic';
+
+export type CURRENCY_SYMBOLS = 'R$' | '$' | '€';
+export const CURRENCIES: {
+  value: string,
+  symbol: CURRENCY_SYMBOLS,
+  label: string
+}[] = [
+  { value: 'BRL',symbol: 'R$', label: 'Real brasileiro - R$' },
+  { value: 'USD',symbol: '$', label: 'Dollar - US$' },
+  { value: 'EUR',symbol: '€', label: 'Euro - €' },
+]
+
+export enum PAYMENT_METHODS  {
+  PIX = 'PIX',
+  CARD= 'CARD',
+};

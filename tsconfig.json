@@ -31,6 +31,9 @@
       "./typings"
     ],
     "paths": {
+      "crypto/*": [
+        "./src/shared/utils/crypto/*"
+      ],
       "core/*": [
         "./src/core/*"
       ],
