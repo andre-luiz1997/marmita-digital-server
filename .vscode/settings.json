@@ -29,6 +29,11 @@
     "/src/core/dtos/payments",
     "/src/core/dtos/payments/transactions",
     "/src/data/remote/adapters",
-    "/src/data/remote/adapters/payments"
+    "/src/data/remote/adapters/payments",
+    "/src/data/remote/adapters/payments/types",
+    "/src/data/remote/adapters/payments/types/pagarme",
+    "/src/data/remote/adapters/payments/mappers",
+    "/src/services/use-cases/payments",
+    "/src/data/remote/adapters/zipcode"
   ]
 }

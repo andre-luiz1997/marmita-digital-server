@@ -75,3 +75,8 @@ export enum TRANSACTION_GATEWAYS {
   STRIPE = 'STRIPE',
   PAYPAL = 'PAYPAL',
 }
+
+export enum PERSON_TYPES {
+  INDIVIDUAL = 'individual',
+  CORPORATION = 'corporation',
+}

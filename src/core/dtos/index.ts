@@ -1,3 +1,4 @@
+export * from './address.dto';
 export * from './auth';
 export * from './payments';
 export * from './phone.dto';

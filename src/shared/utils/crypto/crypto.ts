@@ -1,4 +1,4 @@
-import { KeyObject, constants, generateKeyPairSync, privateDecrypt } from 'node:crypto';
+import { KeyObject, constants, generateKeyPairSync, privateDecrypt, privateEncrypt, publicEncrypt } from 'node:crypto';
 import * as fs from 'node:fs';
 
 export class Crypto {
@@ -40,6 +40,13 @@ export class Crypto {
       },
       Buffer.from(data, 'base64'),
     ).toString('utf-8');
+  }
+
+  public publicEncrypt(data: string, publicKey: string) {
+    return publicEncrypt({
+      key: publicKey,
+      padding: constants.RSA_PKCS1_OAEP_PADDING,
+    }, Buffer.from(data)).toString('base64');
   }
 
   private loadKeyPair() {

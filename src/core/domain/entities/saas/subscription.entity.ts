@@ -2,7 +2,6 @@ import { Entity } from "core/base";
 import { PlanEntity, PlanPricing } from "./plan.entity";
 import { PAYMENT_METHODS } from "@/constants";
 
-
 export interface PixPayment {
   method: PAYMENT_METHODS.PIX;
 }
@@ -13,6 +12,7 @@ export interface CardPayment {
     name: string;
     expiration: string;
     cvv: string;
+    hash?: string;
   };
 }
 export type SubscriptionPayment = PixPayment | CardPayment;
