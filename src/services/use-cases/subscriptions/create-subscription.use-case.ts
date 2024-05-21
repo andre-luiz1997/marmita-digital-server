@@ -10,9 +10,10 @@ import { FindPlanByIdUseCase } from "../plans";
 import { RecordNotFoundException, ValidationException } from "shared/exceptions";
 import { STATUSES } from "shared/types";
 import { Crypto } from "crypto/crypto";
-import { PAYMENT_METHODS } from "@/constants";
+import { PAYMENT_METHODS, TRANSACTION_GATEWAYS } from "@/constants";
 import { CreateTransactionUseCase } from "../payments";
 import { UpdateTenantUseCase } from "../tenants/update-tenant.use-case";
+import { validate } from "class-validator";
 
 @Injectable()
 export class CreateSubscriptionUseCase implements UseCase<SubscriptionEntity> {
@@ -27,7 +28,6 @@ export class CreateSubscriptionUseCase implements UseCase<SubscriptionEntity> {
   ) { }
 
   async execute(data: CreateSubscriptionDTO): Promise<SubscriptionEntity> {
-    console.log('🚀 ~ file: create-subscription.use-case.ts:23 ~ CreateSubscriptionUseCase ~ execute ~ data 🚀 ➡➡', data);
     if (!data.tenant._id || !data.plan._id) throw new ValidationException("Tenant and Plan are required.");
     const tenant = await this.findTenantByIdUseCase.execute(data.tenant._id);
     const plan = await this.findPlanByIdUseCase.execute(data.plan._id);
@@ -49,8 +49,6 @@ export class CreateSubscriptionUseCase implements UseCase<SubscriptionEntity> {
     subscription.payment = payment;
     subscription = await this.subscriptionsRepository.create(subscription);
     try {
-      console.log('🚀 ~ file: create-subscription.use-case.ts:46 ~ CreateSubscriptionUseCase ~ execute ~ subscription 🚀 ➡➡', subscription);
-
       let transactionPayment: SubscriptionPayment;
       if (payment.method === PAYMENT_METHODS.CARD) {
         transactionPayment = {
@@ -69,11 +67,14 @@ export class CreateSubscriptionUseCase implements UseCase<SubscriptionEntity> {
         subscription,
         tenant: data.tenant,
         payment: transactionPayment,
-        billing
+        billing,
+        gateway: TRANSACTION_GATEWAYS.PAGARME
       }
-      console.log('🚀 ~ file: subscriptions.service.ts:45 ~ SubscriptionsService ~ create ~ dto 🚀 ➡➡', dto);
+      console.log('🚀 ~ file: create-subscription.use-case.ts:73 ~ CreateSubscriptionUseCase ~ execute ~ dto 🚀 ➡➡', dto);
+      const valid = await validate(CreateTransactionDTO.name, dto);      
+      console.log('🚀 ~ file: create-subscription.use-case.ts:74 ~ CreateSubscriptionUseCase ~ execute ~ valid 🚀 ➡➡', valid);
       const res = await this.createTransactionUseCase.execute(dto);
-      console.log('🚀 ~ file: create-subscription.use-case.ts:76 ~ CreateSubscriptionUseCase ~ execute ~ res 🚀 ➡➡', res);
+      console.log('🚀 ~ file: create-subscription.use-case.ts:73 ~ CreateSubscriptionUseCase ~ execute ~ res 🚀 ➡➡', res);
       return subscription;
     } catch (error) {
       await this.subscriptionsRepository.delete(subscription._id);

@@ -33,6 +33,18 @@ interface PagarmeBillingAddress {
   }
 }
 
+export interface PagarmeItem {
+  id: string;
+  title: string;
+  /** Price by item unity, in cents
+   *  @example R$20,06 = 2006 
+   */
+  unit_price: number;
+  quantity: number;
+  /** Indicates if the item is digital or should be shipped to the buyer */
+  tangible: boolean;
+  category?: string;
+}
 
 interface BasePagarmeTransaction {
   amount: number;
@@ -55,6 +67,7 @@ interface BasePagarmeTransaction {
   local_time?: string;
   customer: PagarmeCustomer;
   billing: PagarmeBillingAddress;
+  items: PagarmeItem[];
 }
 
 interface BasePagarmeCreditCardTransaction extends BasePagarmeTransaction {

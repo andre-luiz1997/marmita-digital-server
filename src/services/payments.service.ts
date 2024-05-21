@@ -7,18 +7,18 @@ import { AdapterNotFoundException } from 'shared/exceptions';
 
 @Injectable()
 export class PaymentsService {
-  private readonly adapters: { [key in TRANSACTION_GATEWAYS]?: PaymentProvider } = {}
+  static adapters: { [key in TRANSACTION_GATEWAYS]?: PaymentProvider } = {}
 
   constructor(
     private readonly pagarmeAdapter: PagarmeAdapter,
   ) {
-    this.adapters = {
+    PaymentsService.adapters = {
       [TRANSACTION_GATEWAYS.PAGARME]: this.pagarmeAdapter,
     }
   } 
 
   async createTransaction(provider: string, data: CreateTransactionDTO) {
-    const adapter = this.adapters[provider];
+    const adapter = PaymentsService.adapters[provider];
     if(!adapter) throw new AdapterNotFoundException(provider);
     return adapter.createTransaction(data);
   }

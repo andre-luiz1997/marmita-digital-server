@@ -85,10 +85,8 @@ export class PagarmeAdapter implements PaymentProvider {
     } catch (error) {
       if (error.response?.data) {
         console.log('🚀 ~ file: pagarme.adapter.ts:78 ~ PagarmeAdapter ~ createTransaction ~ error 🚀 ➡➡', error.response.data);
-        return;
       }
-      console.log('🚀 ~ file: pagarme.adapter.ts:78 ~ PagarmeAdapter ~ createTransaction ~ error 🚀 ➡➡', error);
-
+      throw error;
     }
   }
 }

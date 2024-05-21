@@ -15,10 +15,11 @@ export class BillingDTO {
   @IsString()
   @IsEnum(PERSON_TYPES)
   type: PERSON_TYPES;
-  @IsOptional()
+  @IsNotEmpty()
   @IsArray()
   @IsString({ each: true })
   phones?: string[];
+
   @IsOptional()
   @IsString()
   @IsDateString()
