@@ -1,6 +1,6 @@
 import { Entity } from "core/base";
 import { PlanEntity, PlanPricing } from "./plan.entity";
-import { PAYMENT_METHODS } from "@/constants";
+import { PAYMENT_METHODS, SUBSCRIPTION_STATUS } from "@/constants";
 
 export interface PixPayment {
   method: PAYMENT_METHODS.PIX;
@@ -10,8 +10,8 @@ export interface CardPayment {
   creditCard: {
     number: string;
     name: string;
-    expiration: string;
-    cvv: string;
+    expiration?: string;
+    cvv?: string;
     hash?: string;
   };
 }
@@ -19,7 +19,7 @@ export type SubscriptionPayment = PixPayment | CardPayment;
 
 export class SubscriptionEntity extends Entity {
   public plan: PlanEntity;
-  public status: string;
+  public status: SUBSCRIPTION_STATUS;
   public payment: SubscriptionPayment;
   public pricing: PlanPricing;
   public createdAt: Date;

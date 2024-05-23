@@ -3,7 +3,7 @@ import { Type } from "class-transformer";
 import { IsArray, IsDateString, IsEmail, IsEnum, IsNotEmpty, IsOptional, IsString, Length, ValidateNested } from "class-validator";
 import { AddressDTO } from "core/dtos/address.dto";
 import { BillingDocumentDTO } from "./billing-document.dto";
-import { BillingDocument } from "core/domain/entities";
+import { BillingDocument, Phone } from "core/domain/entities";
 
 export class BillingDTO {
   @IsString()
@@ -18,7 +18,7 @@ export class BillingDTO {
   @IsNotEmpty()
   @IsArray()
   @IsString({ each: true })
-  phones?: string[];
+  phones?: Phone[];
 
   @IsOptional()
   @IsString()

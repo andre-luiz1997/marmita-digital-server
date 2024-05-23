@@ -1,5 +1,6 @@
 import { PERSON_TYPES } from "@/constants";
 import { Address } from "../address";
+import { Phone } from "../phone";
 
 export interface BillingDocument {
   type: PERSON_TYPES;
@@ -10,7 +11,7 @@ export interface Billing {
   name: string;
   email: string;
   type: PERSON_TYPES;
-  phones?: string[];
+  phones?: Phone[];
   birthday?: string;
   documents?: BillingDocument[];
   address: Address;

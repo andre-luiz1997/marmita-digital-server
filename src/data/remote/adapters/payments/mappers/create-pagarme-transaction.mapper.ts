@@ -4,8 +4,17 @@ import { PagarmeItem, PagarmeTransaction } from "../types";
 import { PAYMENT_METHODS } from "@/constants";
 import { ValidationException } from "shared/exceptions";
 import { filterUndefinedOrNull } from "shared/utils/common";
+import { Phone } from "core/domain/entities";
+import * as countries from "@/data/countries.json";
 
 export class CreatePagarmeTransactionMapper implements Mapper<CreateTransactionDTO, PagarmeTransaction> {
+  private mapPhoneNumbers(phones: Phone[]) {
+    return phones.map(phone => {
+      const c = countries.find(c => c.codigoPais == phone.country).codigoArea;
+      return `+${Number(c)}${phone.phoneNumber}`
+    })
+  }
+
   mapFrom(param: CreateTransactionDTO): PagarmeTransaction {
     if (param.payment.method == PAYMENT_METHODS.CARD) {
       if (!param.tenant) throw new ValidationException('Tenant is required');
@@ -14,8 +23,8 @@ export class CreatePagarmeTransactionMapper implements Mapper<CreateTransactionD
       let expiration = param.payment.creditCard.expiration;
       if (expiration.includes('-')) {
         let [year, month] = expiration.split('-');
-        year = year.length == 2 ? year : year.at(-2);
-        expiration = [year, month].join('');
+        year = year.length == 2 ? year : `${year.at(2)}${year.at(3)}`;
+        expiration = [month, year].join('');
       }
       const items: PagarmeItem[] = [
         {
@@ -26,7 +35,7 @@ export class CreatePagarmeTransactionMapper implements Mapper<CreateTransactionD
           tangible: false
         }
       ]
-
+      const phones = this.mapPhoneNumbers(billing.phones);
       return filterUndefinedOrNull({
         amount: param.amount,
         payment_method: 'credit_card',
@@ -40,8 +49,11 @@ export class CreatePagarmeTransactionMapper implements Mapper<CreateTransactionD
           email: billing.email,
           name: billing.name,
           country: billing.address.country.toLowerCase(),
-          documents: billing.documents,
-          phone_numbers: billing.phones,
+          documents: billing.documents.map(doc => ({
+            type: doc.type == 'individual' ? 'cpf' : 'cnpj',
+            number: doc.number
+          })),
+          phone_numbers: phones,
           birthday: billing.birthday,
           type: billing.type,
           external_id: param.tenant._id.toString()

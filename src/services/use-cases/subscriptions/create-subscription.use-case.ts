@@ -10,7 +10,7 @@ import { FindPlanByIdUseCase } from "../plans";
 import { RecordNotFoundException, ValidationException } from "shared/exceptions";
 import { STATUSES } from "shared/types";
 import { Crypto } from "crypto/crypto";
-import { PAYMENT_METHODS, TRANSACTION_GATEWAYS } from "@/constants";
+import { PAYMENT_METHODS, SUBSCRIPTION_STATUS, TRANSACTION_GATEWAYS, TRANSACTION_STATUS } from "@/constants";
 import { CreateTransactionUseCase } from "../payments";
 import { UpdateTenantUseCase } from "../tenants/update-tenant.use-case";
 import { validate } from "class-validator";
@@ -45,7 +45,7 @@ export class CreateSubscriptionUseCase implements UseCase<SubscriptionEntity> {
     subscription.tenant = tenant;
     subscription.plan = plan;
     subscription.pricing = plan.pricing;
-    subscription.status = STATUSES[0];
+    subscription.status = SUBSCRIPTION_STATUS[0];
     subscription.payment = payment;
     subscription = await this.subscriptionsRepository.create(subscription);
     try {
@@ -74,6 +74,7 @@ export class CreateSubscriptionUseCase implements UseCase<SubscriptionEntity> {
       const valid = await validate(CreateTransactionDTO.name, dto);      
       console.log('🚀 ~ file: create-subscription.use-case.ts:74 ~ CreateSubscriptionUseCase ~ execute ~ valid 🚀 ➡➡', valid);
       const res = await this.createTransactionUseCase.execute(dto);
+      if(res.status === TRANSACTION_STATUS.PAID) await this.subscriptionsRepository.update(subscription._id, { status: SUBSCRIPTION_STATUS.ACTIVE });
       console.log('🚀 ~ file: create-subscription.use-case.ts:73 ~ CreateSubscriptionUseCase ~ execute ~ res 🚀 ➡➡', res);
       return subscription;
     } catch (error) {

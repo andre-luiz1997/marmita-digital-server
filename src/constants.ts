@@ -16,6 +16,7 @@ export enum PROVIDERS {
   TENANT = 'TENANT',
   PLAN = 'PLAN',
   SUBSCRIPTION = 'SUBSCRIPTION',
+  TRANSACTION = 'TRANSACTION',
 }
 
 export enum ENTITIES {
@@ -23,6 +24,7 @@ export enum ENTITIES {
   TENANT = 'tenants',
   PLAN = 'plans',
   SUBSCRIPTION = 'subscriptions',
+  TRANSACTION = 'transactions',
 }
 
 export enum SERVICES {
@@ -31,6 +33,7 @@ export enum SERVICES {
   TENANT = 'TenantService',
   PLAN = 'PlanService',
   SUBSCRIPTION = 'SubscriptionService',
+  TRANSACTION = 'TransactionService',
 }
 
 export enum REPOSITORIES {
@@ -38,6 +41,7 @@ export enum REPOSITORIES {
   TENANT = 'TenantRepository',
   PLAN = 'PlanRepository',
   SUBSCRIPTION = 'SubscriptionRepository',
+  TRANSACTION = 'TransactionRepository',
 }
 
 export const JWT_SECRET = process.env.JWT_SECRET;
@@ -62,11 +66,19 @@ export enum PAYMENT_METHODS  {
 };
 
 export enum TRANSACTION_STATUS {
+  PAID = 'PAID',
   PENDING = 'PENDING',
   APPROVED = 'APPROVED',
   REJECTED = 'REJECTED',
   CANCELED = 'CANCELED',
   REFUNDED = 'REFUNDED',
+}
+
+export enum SUBSCRIPTION_STATUS {
+  PENDING = 'PENDING',
+  ACTIVE = 'ACTIVE',
+  INACTIVE = 'INACTIVE',
+  CANCELED = 'CANCELED',
 }
 
 export enum TRANSACTION_GATEWAYS {

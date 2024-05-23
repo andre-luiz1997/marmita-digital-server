@@ -3,7 +3,7 @@ import { CardPayment, TransactionEntity } from "core/domain/entities";
 import { CreateTransactionDTO } from "core/dtos";
 import { PaymentProvider } from "core/providers";
 import { CreatePagarmeTransactionMapper, PagarmeTransactionMapper } from "./mappers";
-import { PagarmeCardHashKeyResponse, isWithoutCardId } from "./types";
+import { PagarmeCardHashKeyResponse, PagarmeTransactionResponse, isWithoutCardId } from "./types";
 import { Crypto } from "crypto/crypto";
 import { PAYMENT_METHODS, TRANSACTION_GATEWAYS } from "@/constants";
 
@@ -39,8 +39,8 @@ export class PagarmeAdapter implements PaymentProvider {
     return axios.get(`${this.endpoint}/${url}`, this.configuration(options));
   }
 
-  private post(url: string, data: any, options?: RequestOptions) {
-    return axios.post(`${this.endpoint}/${url}`, data, this.configuration(options));
+  private post<T>(url: string, data: any, options?: RequestOptions) {
+    return axios.post<T>(`${this.endpoint}/${url}`, data, this.configuration(options));
   }
 
   // constructor() {
@@ -78,10 +78,15 @@ export class PagarmeAdapter implements PaymentProvider {
       if (pagarmeTransaction.payment_method == 'credit_card' && data.payment.method == PAYMENT_METHODS.CARD && isWithoutCardId(pagarmeTransaction) && !pagarmeTransaction.card_hash) {
         pagarmeTransaction.card_hash = await this.getCardHash(data.payment);
       }
-      console.log('🚀 ~ file: pagarme.adapter.ts:80 ~ PagarmeAdapter ~ createTransaction ~ pagarmeTransaction 🚀 ➡➡', pagarmeTransaction);
       const transactionMapper = new PagarmeTransactionMapper();
-      const response = await this.post('transactions', pagarmeTransaction);
-      return transactionMapper.mapTo(response.data)
+      const response = await this.post<PagarmeTransactionResponse>('transactions', pagarmeTransaction);
+      return transactionMapper.mapTo({
+        pagarmeResponse: response.data,
+        plan: data.plan,
+        tenant: data.tenant,
+        subscription: data.subscription,
+        payment: data.payment,
+      })
     } catch (error) {
       if (error.response?.data) {
         console.log('🚀 ~ file: pagarme.adapter.ts:78 ~ PagarmeAdapter ~ createTransaction ~ error 🚀 ➡➡', error.response.data);

@@ -20,6 +20,7 @@ import { SubscriptionMongoModel } from './mongo/models/subscription-mongo.model'
 import { SubscriptionsService } from 'services/subscriptions.service';
 import { paymentsAdaptersProviders, zipcodeAdaptersProvider } from 'data/remote/adapters';
 import { PaymentsService } from 'services/payments.service';
+import { TransactionMongoModel } from './mongo/models/transaction-mongo.model';
 
 function getMongooseConnectionString() {
     const user = DB_USER ? `${DB_USER}:${DB_PASS}@` : '';
@@ -35,6 +36,7 @@ function getMongooseConnectionString() {
             { name: ENTITIES.TENANT, schema: TenantMongoModel },
             { name: ENTITIES.PLAN, schema: PlanMongoModel },
             { name: ENTITIES.SUBSCRIPTION, schema: SubscriptionMongoModel },
+            { name: ENTITIES.TRANSACTION, schema: TransactionMongoModel },
         ]),
         JwtModule.register({
             global: true,

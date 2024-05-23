@@ -1,0 +1,1914 @@
+[
+  {
+    "codigo": "004",
+    "codigoArea": "0093",
+    "codigoPais": "AF",
+    "iso3": "AFG",
+    "nome": "Afeganistão",
+    "nomeFormal": "República Islâmica do Afeganistão"
+  },
+  {
+    "codigo": "008",
+    "codigoArea": "0355",
+    "codigoPais": "AL",
+    "iso3": "ALB",
+    "nome": "Albânia",
+    "nomeFormal": "República da Albânia"
+  },
+  {
+    "codigo": "012",
+    "codigoArea": "0213",
+    "codigoPais": "DZ",
+    "iso3": "DZA",
+    "nome": "Algéria",
+    "nomeFormal": "República Democrática Popular da Algéria"
+  },
+  {
+    "codigo": "016",
+    "codigoArea": "1684",
+    "codigoPais": "AS",
+    "iso3": "ASM",
+    "nome": "Samoa Americana",
+    "nomeFormal": "Território de Samoa Americana"
+  },
+  {
+    "codigo": "020",
+    "codigoArea": "0376",
+    "codigoPais": "AD",
+    "iso3": "AND",
+    "nome": "Andorra",
+    "nomeFormal": "Principado Andorra"
+  },
+  {
+    "codigo": "024",
+    "codigoArea": "0244",
+    "codigoPais": "AO",
+    "iso3": "AGO",
+    "nome": "Angola",
+    "nomeFormal": "República de Angola"
+  },
+  {
+    "codigo": "660",
+    "codigoArea": "1264",
+    "codigoPais": "AI",
+    "iso3": "AIA",
+    "nome": "Anguilla",
+    "nomeFormal": "Anguilla"
+  },
+  {
+    "codigo": "010",
+    "codigoArea": "0672",
+    "codigoPais": "AQ",
+    "iso3": "ATA",
+    "nome": "Antártida",
+    "nomeFormal": "Antártida"
+  },
+  {
+    "codigo": "028",
+    "codigoArea": "1268",
+    "codigoPais": "AG",
+    "iso3": "ATG",
+    "nome": "Antigua e Barbuda",
+    "nomeFormal": "Antigua e Barbuda"
+  },
+  {
+    "codigo": "032",
+    "codigoArea": "0054",
+    "codigoPais": "AR",
+    "iso3": "ARG",
+    "nome": "Argentina",
+    "nomeFormal": "República Argentina"
+  },
+  {
+    "codigo": "051",
+    "codigoArea": "0374",
+    "codigoPais": "AM",
+    "iso3": "ARM",
+    "nome": "Armênia",
+    "nomeFormal": "República da Armênia"
+  },
+  {
+    "codigo": "533",
+    "codigoArea": "0297",
+    "codigoPais": "AW",
+    "iso3": "ABW",
+    "nome": "Aruba",
+    "nomeFormal": "Aruba"
+  },
+  {
+    "codigo": "036",
+    "codigoArea": "0061",
+    "codigoPais": "AU",
+    "iso3": "AUS",
+    "nome": "Austrália",
+    "nomeFormal": "Comunidade da Austrália"
+  },
+  {
+    "codigo": "040",
+    "codigoArea": "0043",
+    "codigoPais": "AT",
+    "iso3": "AUT",
+    "nome": "Áustria",
+    "nomeFormal": "República da Áustria"
+  },
+  {
+    "codigo": "031",
+    "codigoArea": "0994",
+    "codigoPais": "AZ",
+    "iso3": "AZE",
+    "nome": "Azerbaijão",
+    "nomeFormal": "República do Azerbaijão"
+  },
+  {
+    "codigo": "044",
+    "codigoArea": "1242",
+    "codigoPais": "BS",
+    "iso3": "BHS",
+    "nome": "Bahamas",
+    "nomeFormal": "Comunidade de Bahamas"
+  },
+  {
+    "codigo": "048",
+    "codigoArea": "0973",
+    "codigoPais": "BH",
+    "iso3": "BHR",
+    "nome": "Bahrein",
+    "nomeFormal": "Reino do Bahrein"
+  },
+  {
+    "codigo": "050",
+    "codigoArea": "0880",
+    "codigoPais": "BD",
+    "iso3": "BGD",
+    "nome": "Bangladesh",
+    "nomeFormal": "República Popular de Bangladesh"
+  },
+  {
+    "codigo": "052",
+    "codigoArea": "0246",
+    "codigoPais": "BB",
+    "iso3": "BRB",
+    "nome": "Barbados",
+    "nomeFormal": "Barbados"
+  },
+  {
+    "codigo": "112",
+    "codigoArea": "0375",
+    "codigoPais": "BY",
+    "iso3": "BLR",
+    "nome": "Bielorrússia",
+    "nomeFormal": "República da Bielorrússia"
+  },
+  {
+    "codigo": "056",
+    "codigoArea": "0032",
+    "codigoPais": "BE",
+    "iso3": "BEL",
+    "nome": "Bélgica",
+    "nomeFormal": "Reino da Bélgica"
+  },
+  {
+    "codigo": "084",
+    "codigoArea": "0501",
+    "codigoPais": "BZ",
+    "iso3": "BLZ",
+    "nome": "Belize",
+    "nomeFormal": "Belize"
+  },
+  {
+    "codigo": "204",
+    "codigoArea": "0229",
+    "codigoPais": "BJ",
+    "iso3": "BEN",
+    "nome": "Benin",
+    "nomeFormal": "República do Benin"
+  },
+  {
+    "codigo": "060",
+    "codigoArea": "1441",
+    "codigoPais": "BM",
+    "iso3": "BMU",
+    "nome": "Bermuda",
+    "nomeFormal": "Bermuda"
+  },
+  {
+    "codigo": "064",
+    "codigoArea": "0975",
+    "codigoPais": "BT",
+    "iso3": "BTN",
+    "nome": "Butão",
+    "nomeFormal": "Reino do Butão"
+  },
+  {
+    "codigo": "068",
+    "codigoArea": "0591",
+    "codigoPais": "BO",
+    "iso3": "BOL",
+    "nome": "Bolívia",
+    "nomeFormal": "Estado Plurinacional da Bolívia"
+  },
+  {
+    "codigo": "070",
+    "codigoArea": "0387",
+    "codigoPais": "BA",
+    "iso3": "BIH",
+    "nome": "Bósnia e Herzegovina",
+    "nomeFormal": "Bósnia e Herzegovina"
+  },
+  {
+    "codigo": "072",
+    "codigoArea": "0267",
+    "codigoPais": "BW",
+    "iso3": "BWA",
+    "nome": "Botswana",
+    "nomeFormal": "República da Botswana"
+  },
+  {
+    "codigo": "074",
+    "codigoArea": "0047",
+    "codigoPais": "BV",
+    "iso3": "BVT",
+    "nome": "Ilha Bouvet",
+    "nomeFormal": "Ilha Bouvet"
+  },
+  {
+    "codigo": "076",
+    "codigoArea": "0055",
+    "codigoPais": "BR",
+    "iso3": "BRA",
+    "nome": "Brasil",
+    "nomeFormal": "República Federativa do Brasil"
+  },
+  {
+    "codigo": "086",
+    "codigoArea": "0246",
+    "codigoPais": "IO",
+    "iso3": "IOT",
+    "nome": "Território Britânico do Oceano Índico",
+    "nomeFormal": "Território Britânico do Oceano Índico"
+  },
+  {
+    "codigo": "096",
+    "codigoArea": "0673",
+    "codigoPais": "BN",
+    "iso3": "BRN",
+    "nome": "Brunei",
+    "nomeFormal": "Estado do Brunei Darussalam"
+  },
+  {
+    "codigo": "100",
+    "codigoArea": "0359",
+    "codigoPais": "BG",
+    "iso3": "BGR",
+    "nome": "Bulgária",
+    "nomeFormal": "República da Bulgária"
+  },
+  {
+    "codigo": "854",
+    "codigoArea": "0226",
+    "codigoPais": "BF",
+    "iso3": "BFA",
+    "nome": "Burkina Faso",
+    "nomeFormal": "Burkina Faso"
+  },
+  {
+    "codigo": "108",
+    "codigoArea": "0257",
+    "codigoPais": "BI",
+    "iso3": "BDI",
+    "nome": "Burundi",
+    "nomeFormal": "República do Burundi"
+  },
+  {
+    "codigo": "116",
+    "codigoArea": "0855",
+    "codigoPais": "KH",
+    "iso3": "KHM",
+    "nome": "Camboja",
+    "nomeFormal": "Reino do Camboja"
+  },
+  {
+    "codigo": "120",
+    "codigoArea": "0237",
+    "codigoPais": "CM",
+    "iso3": "CMR",
+    "nome": "Camarões",
+    "nomeFormal": "República de Camarões"
+  },
+  {
+    "codigo": "124",
+    "codigoArea": "0001",
+    "codigoPais": "CA",
+    "iso3": "CAN",
+    "nome": "Canadá",
+    "nomeFormal": "Canadá"
+  },
+  {
+    "codigo": "132",
+    "codigoArea": "0238",
+    "codigoPais": "CV",
+    "iso3": "CPV",
+    "nome": "Cabo Verde",
+    "nomeFormal": "República do Cabo Verde"
+  },
+  {
+    "codigo": "136",
+    "codigoArea": "1345",
+    "codigoPais": "KY",
+    "iso3": "CYM",
+    "nome": "Ilhas Cayman",
+    "nomeFormal": "Ilhas Cayman"
+  },
+  {
+    "codigo": "140",
+    "codigoArea": "0236",
+    "codigoPais": "CF",
+    "iso3": "CAF",
+    "nome": "República Centro-Africana",
+    "nomeFormal": "República Centro-Africana"
+  },
+  {
+    "codigo": "148",
+    "codigoArea": "0235",
+    "codigoPais": "TD",
+    "iso3": "TCD",
+    "nome": "Chade",
+    "nomeFormal": "República do Chade"
+  },
+  {
+    "codigo": "152",
+    "codigoArea": "0056",
+    "codigoPais": "CL",
+    "iso3": "CHL",
+    "nome": "Chile",
+    "nomeFormal": "República do Chile"
+  },
+  {
+    "codigo": "156",
+    "codigoArea": "0086",
+    "codigoPais": "CN",
+    "iso3": "CHN",
+    "nome": "China",
+    "nomeFormal": "República Popular da China"
+  },
+  {
+    "codigo": "162",
+    "codigoArea": "0061",
+    "codigoPais": "CX",
+    "iso3": "CXR",
+    "nome": "Ilha Christmas",
+    "nomeFormal": "Território da Ilha Christmas"
+  },
+  {
+    "codigo": "166",
+    "codigoArea": "0672",
+    "codigoPais": "CC",
+    "iso3": "CCK",
+    "nome": "Ilhas Cocos (Keeling)",
+    "nomeFormal": "Território das Ilhas Cocos (Keeling)"
+  },
+  {
+    "codigo": "170",
+    "codigoArea": "0057",
+    "codigoPais": "CO",
+    "iso3": "COL",
+    "nome": "Colômbia",
+    "nomeFormal": "República da Colômbia"
+  },
+  {
+    "codigo": "174",
+    "codigoArea": "0269",
+    "codigoPais": "KM",
+    "iso3": "COM",
+    "nome": "Comores",
+    "nomeFormal": "União das Comores"
+  },
+  {
+    "codigo": "178",
+    "codigoArea": "0242",
+    "codigoPais": "CG",
+    "iso3": "COG",
+    "nome": "Congo",
+    "nomeFormal": "República do Congo"
+  },
+  {
+    "codigo": "180",
+    "codigoArea": "0242",
+    "codigoPais": "CD",
+    "iso3": "COD",
+    "nome": "Congo (DR)",
+    "nomeFormal": "República Democrática do Congo"
+  },
+  {
+    "codigo": "184",
+    "codigoArea": "0682",
+    "codigoPais": "CK",
+    "iso3": "COK",
+    "nome": "Ilhas Cook",
+    "nomeFormal": "Ilhas Cook"
+  },
+  {
+    "codigo": "188",
+    "codigoArea": "0506",
+    "codigoPais": "CR",
+    "iso3": "CRI",
+    "nome": "Costa Rica",
+    "nomeFormal": "República da Costa Rica"
+  },
+  {
+    "codigo": "384",
+    "codigoArea": "0225",
+    "codigoPais": "CI",
+    "iso3": "CIV",
+    "nome": "Costa do Marfim",
+    "nomeFormal": "República da Costa do Marfim"
+  },
+  {
+    "codigo": "191",
+    "codigoArea": "0385",
+    "codigoPais": "HR",
+    "iso3": "HRV",
+    "nome": "Croácia",
+    "nomeFormal": "República da Croácia"
+  },
+  {
+    "codigo": "192",
+    "codigoArea": "0053",
+    "codigoPais": "CU",
+    "iso3": "CUB",
+    "nome": "Cuba",
+    "nomeFormal": "República de Cuba"
+  },
+  {
+    "codigo": "196",
+    "codigoArea": "0357",
+    "codigoPais": "CY",
+    "iso3": "CYP",
+    "nome": "Chipre",
+    "nomeFormal": "República do Chipre"
+  },
+  {
+    "codigo": "203",
+    "codigoArea": "0420",
+    "codigoPais": "CZ",
+    "iso3": "CZE",
+    "nome": "República Tcheca",
+    "nomeFormal": "República Tcheca"
+  },
+  {
+    "codigo": "208",
+    "codigoArea": "0045",
+    "codigoPais": "DK",
+    "iso3": "DNK",
+    "nome": "Dinamarca",
+    "nomeFormal": "Reino da Dinamarca"
+  },
+  {
+    "codigo": "262",
+    "codigoArea": "0253",
+    "codigoPais": "DJ",
+    "iso3": "DJI",
+    "nome": "Djibuti",
+    "nomeFormal": "República do Djibuti"
+  },
+  {
+    "codigo": "212",
+    "codigoArea": "1767",
+    "codigoPais": "DM",
+    "iso3": "DMA",
+    "nome": "Dominica",
+    "nomeFormal": "Comunidade da Dominica"
+  },
+  {
+    "codigo": "214",
+    "codigoArea": "1809",
+    "codigoPais": "DO",
+    "iso3": "DOM",
+    "nome": "República Dominicana",
+    "nomeFormal": "República Dominicana"
+  },
+  {
+    "codigo": "218",
+    "codigoArea": "0593",
+    "codigoPais": "EC",
+    "iso3": "ECU",
+    "nome": "Equador",
+    "nomeFormal": "República do Equador"
+  },
+  {
+    "codigo": "818",
+    "codigoArea": "0020",
+    "codigoPais": "EG",
+    "iso3": "EGY",
+    "nome": "Egito",
+    "nomeFormal": "República Árabe do Egito"
+  },
+  {
+    "codigo": "222",
+    "codigoArea": "0503",
+    "codigoPais": "SV",
+    "iso3": "SLV",
+    "nome": "El Salvador",
+    "nomeFormal": "República El Salvador"
+  },
+  {
+    "codigo": "226",
+    "codigoArea": "0240",
+    "codigoPais": "GQ",
+    "iso3": "GNQ",
+    "nome": "Guiné Equatorial",
+    "nomeFormal": "República do Guiné Equatorial"
+  },
+  {
+    "codigo": "232",
+    "codigoArea": "0291",
+    "codigoPais": "ER",
+    "iso3": "ERI",
+    "nome": "Eritreia",
+    "nomeFormal": "Estado da Eritreia"
+  },
+  {
+    "codigo": "233",
+    "codigoArea": "0372",
+    "codigoPais": "EE",
+    "iso3": "EST",
+    "nome": "Estônia",
+    "nomeFormal": "República da Estônia"
+  },
+  {
+    "codigo": "231",
+    "codigoArea": "0251",
+    "codigoPais": "ET",
+    "iso3": "ETH",
+    "nome": "Etiópia",
+    "nomeFormal": "República Democrática Federal da Etiópia"
+  },
+  {
+    "codigo": "238",
+    "codigoArea": "0500",
+    "codigoPais": "FK",
+    "iso3": "FLK",
+    "nome": "Ilhas Malvinas",
+    "nomeFormal": "Ilhas Malvinas"
+  },
+  {
+    "codigo": "234",
+    "codigoArea": "0298",
+    "codigoPais": "FO",
+    "iso3": "FRO",
+    "nome": "Ilhas Faroe",
+    "nomeFormal": "Ilhas Faroe"
+  },
+  {
+    "codigo": "242",
+    "codigoArea": "0679",
+    "codigoPais": "FJ",
+    "iso3": "FJI",
+    "nome": "Fiji",
+    "nomeFormal": "República do Fiji"
+  },
+  {
+    "codigo": "246",
+    "codigoArea": "0358",
+    "codigoPais": "FI",
+    "iso3": "FIN",
+    "nome": "Finlândia",
+    "nomeFormal": "República da Finlândia"
+  },
+  {
+    "codigo": "250",
+    "codigoArea": "0033",
+    "codigoPais": "FR",
+    "iso3": "FRA",
+    "nome": "França",
+    "nomeFormal": "República Francesa"
+  },
+  {
+    "codigo": "254",
+    "codigoArea": "0594",
+    "codigoPais": "GF",
+    "iso3": "GUF",
+    "nome": "Guiana Francesa",
+    "nomeFormal": "Guiana Francesa"
+  },
+  {
+    "codigo": "258",
+    "codigoArea": "0689",
+    "codigoPais": "PF",
+    "iso3": "PYF",
+    "nome": "Polinésia Francesa",
+    "nomeFormal": "Polinésia Francesa"
+  },
+  {
+    "codigo": "260",
+    "codigoArea": "0033",
+    "codigoPais": "TF",
+    "iso3": "ATF",
+    "nome": "Terras Austrais e Antárticas Francesas",
+    "nomeFormal": "Território das Terras Austrais e Antárticas Francesas"
+  },
+  {
+    "codigo": "266",
+    "codigoArea": "0241",
+    "codigoPais": "GA",
+    "iso3": "GAB",
+    "nome": "Gabão",
+    "nomeFormal": "República Gabonesa"
+  },
+  {
+    "codigo": "270",
+    "codigoArea": "0220",
+    "codigoPais": "GM",
+    "iso3": "GMB",
+    "nome": "Gâmbia",
+    "nomeFormal": "República da Gâmbia"
+  },
+  {
+    "codigo": "268",
+    "codigoArea": "0995",
+    "codigoPais": "GE",
+    "iso3": "GEO",
+    "nome": "Geórgia",
+    "nomeFormal": "Geórgia"
+  },
+  {
+    "codigo": "276",
+    "codigoArea": "0049",
+    "codigoPais": "DE",
+    "iso3": "DEU",
+    "nome": "Alemanha",
+    "nomeFormal": "República Federal da Alemanha"
+  },
+  {
+    "codigo": "288",
+    "codigoArea": "0233",
+    "codigoPais": "GH",
+    "iso3": "GHA",
+    "nome": "Gana",
+    "nomeFormal": "Repúblia de Gana"
+  },
+  {
+    "codigo": "292",
+    "codigoArea": "0350",
+    "codigoPais": "GI",
+    "iso3": "GIB",
+    "nome": "Gibraltar",
+    "nomeFormal": "Gibraltar"
+  },
+  {
+    "codigo": "300",
+    "codigoArea": "0030",
+    "codigoPais": "GR",
+    "iso3": "GRC",
+    "nome": "Grécia",
+    "nomeFormal": "República Helênica"
+  },
+  {
+    "codigo": "304",
+    "codigoArea": "0299",
+    "codigoPais": "GL",
+    "iso3": "GRL",
+    "nome": "Groelândia",
+    "nomeFormal": "Groelândia"
+  },
+  {
+    "codigo": "308",
+    "codigoArea": "1473",
+    "codigoPais": "GD",
+    "iso3": "GRD",
+    "nome": "Granada",
+    "nomeFormal": "Granada"
+  },
+  {
+    "codigo": "312",
+    "codigoArea": "0590",
+    "codigoPais": "GP",
+    "iso3": "GLP",
+    "nome": "Guadalupe",
+    "nomeFormal": "Guadalupe"
+  },
+  {
+    "codigo": "316",
+    "codigoArea": "1671",
+    "codigoPais": "GU",
+    "iso3": "GUM",
+    "nome": "Guão",
+    "nomeFormal": "Território do Guão"
+  },
+  {
+    "codigo": "320",
+    "codigoArea": "0502",
+    "codigoPais": "GT",
+    "iso3": "GTM",
+    "nome": "Guatemala",
+    "nomeFormal": "República da Guatemala"
+  },
+  {
+    "codigo": "324",
+    "codigoArea": "0224",
+    "codigoPais": "GN",
+    "iso3": "GIN",
+    "nome": "Guiné",
+    "nomeFormal": "República do Guiné"
+  },
+  {
+    "codigo": "624",
+    "codigoArea": "0245",
+    "codigoPais": "GW",
+    "iso3": "GNB",
+    "nome": "Guiné-Bissau",
+    "nomeFormal": "República da Guiné-Bissau"
+  },
+  {
+    "codigo": "328",
+    "codigoArea": "0592",
+    "codigoPais": "GY",
+    "iso3": "GUY",
+    "nome": "Guiana",
+    "nomeFormal": "República Cooperativa da Guiana"
+  },
+  {
+    "codigo": "332",
+    "codigoArea": "0509",
+    "codigoPais": "HT",
+    "iso3": "HTI",
+    "nome": "Haiti",
+    "nomeFormal": "República do Haiti"
+  },
+  {
+    "codigo": "334",
+    "codigoArea": "0672",
+    "codigoPais": "HM",
+    "iso3": "HMD",
+    "nome": "Ilhas Heard e McDonald",
+    "nomeFormal": "Território das Ilhas Heard e McDonald"
+  },
+  {
+    "codigo": "336",
+    "codigoArea": "0039",
+    "codigoPais": "VA",
+    "iso3": "VAT",
+    "nome": "Vaticano",
+    "nomeFormal": "Estado da Cidade do Vaticano"
+  },
+  {
+    "codigo": "340",
+    "codigoArea": "0504",
+    "codigoPais": "HN",
+    "iso3": "HND",
+    "nome": "Honduras",
+    "nomeFormal": "República de Honduras"
+  },
+  {
+    "codigo": "344",
+    "codigoArea": "0852",
+    "codigoPais": "HK",
+    "iso3": "HKG",
+    "nome": "Hong Kong",
+    "nomeFormal": "Região Administrativa Especial de Hong Kong da República Popular da China"
+  },
+  {
+    "codigo": "348",
+    "codigoArea": "0036",
+    "codigoPais": "HU",
+    "iso3": "HUN",
+    "nome": "Hungria",
+    "nomeFormal": "Hungria"
+  },
+  {
+    "codigo": "352",
+    "codigoArea": "0354",
+    "codigoPais": "IS",
+    "iso3": "ISL",
+    "nome": "Islândia",
+    "nomeFormal": "Islândia"
+  },
+  {
+    "codigo": "356",
+    "codigoArea": "0091",
+    "codigoPais": "IN",
+    "iso3": "IND",
+    "nome": "Índia",
+    "nomeFormal": "República da Índia"
+  },
+  {
+    "codigo": "360",
+    "codigoArea": "0062",
+    "codigoPais": "ID",
+    "iso3": "IDN",
+    "nome": "Indonésia",
+    "nomeFormal": "República da Indonésia"
+  },
+  {
+    "codigo": "364",
+    "codigoArea": "0098",
+    "codigoPais": "IR",
+    "iso3": "IRN",
+    "nome": "Iran",
+    "nomeFormal": "República Islâmica do Iran"
+  },
+  {
+    "codigo": "368",
+    "codigoArea": "0964",
+    "codigoPais": "IQ",
+    "iso3": "IRQ",
+    "nome": "Iraque",
+    "nomeFormal": "República do Iraque"
+  },
+  {
+    "codigo": "372",
+    "codigoArea": "0353",
+    "codigoPais": "IE",
+    "iso3": "IRL",
+    "nome": "Irlanda",
+    "nomeFormal": "Irlanda"
+  },
+  {
+    "codigo": "376",
+    "codigoArea": "0972",
+    "codigoPais": "IL",
+    "iso3": "ISR",
+    "nome": "Israel",
+    "nomeFormal": "Estado de Israel"
+  },
+  {
+    "codigo": "380",
+    "codigoArea": "0039",
+    "codigoPais": "IT",
+    "iso3": "ITA",
+    "nome": "Itália",
+    "nomeFormal": "República Italiana"
+  },
+  {
+    "codigo": "388",
+    "codigoArea": "1876",
+    "codigoPais": "JM",
+    "iso3": "JAM",
+    "nome": "Jamaica",
+    "nomeFormal": "Jamaica"
+  },
+  {
+    "codigo": "392",
+    "codigoArea": "0081",
+    "codigoPais": "JP",
+    "iso3": "JPN",
+    "nome": "Japão",
+    "nomeFormal": "Japão"
+  },
+  {
+    "codigo": "400",
+    "codigoArea": "0962",
+    "codigoPais": "JO",
+    "iso3": "JOR",
+    "nome": "Jordânia",
+    "nomeFormal": "Reino Hachemita da Jordânia"
+  },
+  {
+    "codigo": "398",
+    "codigoArea": "0007",
+    "codigoPais": "KZ",
+    "iso3": "KAZ",
+    "nome": "Cazaquistão",
+    "nomeFormal": "República do Cazaquistão"
+  },
+  {
+    "codigo": "404",
+    "codigoArea": "0254",
+    "codigoPais": "KE",
+    "iso3": "KEN",
+    "nome": "Quênia",
+    "nomeFormal": "República do Quênia"
+  },
+  {
+    "codigo": "296",
+    "codigoArea": "0686",
+    "codigoPais": "KI",
+    "iso3": "KIR",
+    "nome": "Kiribati",
+    "nomeFormal": "República do Kiribati"
+  },
+  {
+    "codigo": "408",
+    "codigoArea": "0850",
+    "codigoPais": "KP",
+    "iso3": "PRK",
+    "nome": "Coreia do Norte",
+    "nomeFormal": "República Democrática Popular da Coreia"
+  },
+  {
+    "codigo": "410",
+    "codigoArea": "0082",
+    "codigoPais": "KR",
+    "iso3": "KOR",
+    "nome": "Coreia do Sul",
+    "nomeFormal": "República da Coreia"
+  },
+  {
+    "codigo": "414",
+    "codigoArea": "0965",
+    "codigoPais": "KW",
+    "iso3": "KWT",
+    "nome": "Kuwait",
+    "nomeFormal": "Estado do Kuwait"
+  },
+  {
+    "codigo": "417",
+    "codigoArea": "0996",
+    "codigoPais": "KG",
+    "iso3": "KGZ",
+    "nome": "Quirguistão",
+    "nomeFormal": "República Quirguiz"
+  },
+  {
+    "codigo": "418",
+    "codigoArea": "0856",
+    "codigoPais": "LA",
+    "iso3": "LAO",
+    "nome": "Laos",
+    "nomeFormal": "República Democrática Popular Lau"
+  },
+  {
+    "codigo": "428",
+    "codigoArea": "0371",
+    "codigoPais": "LV",
+    "iso3": "LVA",
+    "nome": "Letônia",
+    "nomeFormal": "República da Letônia"
+  },
+  {
+    "codigo": "422",
+    "codigoArea": "0961",
+    "codigoPais": "LB",
+    "iso3": "LBN",
+    "nome": "Líbano",
+    "nomeFormal": "República Libanesa"
+  },
+  {
+    "codigo": "426",
+    "codigoArea": "0266",
+    "codigoPais": "LS",
+    "iso3": "LSO",
+    "nome": "Lesoto",
+    "nomeFormal": "Reino do Lesoto"
+  },
+  {
+    "codigo": "430",
+    "codigoArea": "0231",
+    "codigoPais": "LR",
+    "iso3": "LBR",
+    "nome": "Libéria",
+    "nomeFormal": "República da Libéria"
+  },
+  {
+    "codigo": "434",
+    "codigoArea": "0218",
+    "codigoPais": "LY",
+    "iso3": "LBY",
+    "nome": "Líbia",
+    "nomeFormal": "Líbia"
+  },
+  {
+    "codigo": "438",
+    "codigoArea": "0423",
+    "codigoPais": "LI",
+    "iso3": "LIE",
+    "nome": "Liechtenstein",
+    "nomeFormal": "Principado de Liechtenstein"
+  },
+  {
+    "codigo": "440",
+    "codigoArea": "0370",
+    "codigoPais": "LT",
+    "iso3": "LTU",
+    "nome": "Lituânia",
+    "nomeFormal": "República da Lituânia"
+  },
+  {
+    "codigo": "442",
+    "codigoArea": "0352",
+    "codigoPais": "LU",
+    "iso3": "LUX",
+    "nome": "Luxemburgo",
+    "nomeFormal": "Grão-Ducado do Luxemburgo"
+  },
+  {
+    "codigo": "446",
+    "codigoArea": "0853",
+    "codigoPais": "MO",
+    "iso3": "MAC",
+    "nome": "Macao",
+    "nomeFormal": "Macao"
+  },
+  {
+    "codigo": "807",
+    "codigoArea": "0389",
+    "codigoPais": "MK",
+    "iso3": "MKD",
+    "nome": "Macedônia",
+    "nomeFormal": "República da Macedônia"
+  },
+  {
+    "codigo": "450",
+    "codigoArea": "0261",
+    "codigoPais": "MG",
+    "iso3": "MDG",
+    "nome": "Madagascar",
+    "nomeFormal": "República de Madagascar"
+  },
+  {
+    "codigo": "454",
+    "codigoArea": "0265",
+    "codigoPais": "MW",
+    "iso3": "MWI",
+    "nome": "Malawi",
+    "nomeFormal": "República de Malawi"
+  },
+  {
+    "codigo": "458",
+    "codigoArea": "0060",
+    "codigoPais": "MY",
+    "iso3": "MYS",
+    "nome": "Malásia",
+    "nomeFormal": "Malásia"
+  },
+  {
+    "codigo": "462",
+    "codigoArea": "0960",
+    "codigoPais": "MV",
+    "iso3": "MDV",
+    "nome": "Maldivas",
+    "nomeFormal": "Reública de Maldivas"
+  },
+  {
+    "codigo": "466",
+    "codigoArea": "0223",
+    "codigoPais": "ML",
+    "iso3": "MLI",
+    "nome": "Mali",
+    "nomeFormal": "República do Mali"
+  },
+  {
+    "codigo": "470",
+    "codigoArea": "0356",
+    "codigoPais": "MT",
+    "iso3": "MLT",
+    "nome": "Malta",
+    "nomeFormal": "República de Malta"
+  },
+  {
+    "codigo": "584",
+    "codigoArea": "0692",
+    "codigoPais": "MH",
+    "iso3": "MHL",
+    "nome": "Ilhas Marshall",
+    "nomeFormal": "República das Ilhas Marshall"
+  },
+  {
+    "codigo": "474",
+    "codigoArea": "0596",
+    "codigoPais": "MQ",
+    "iso3": "MTQ",
+    "nome": "Martinica",
+    "nomeFormal": "Martinica"
+  },
+  {
+    "codigo": "478",
+    "codigoArea": "0222",
+    "codigoPais": "MR",
+    "iso3": "MRT",
+    "nome": "Mauritânia",
+    "nomeFormal": "República Islâmica da Mauritânia"
+  },
+  {
+    "codigo": "480",
+    "codigoArea": "0230",
+    "codigoPais": "MU",
+    "iso3": "MUS",
+    "nome": "Maurício",
+    "nomeFormal": "República de Maurício"
+  },
+  {
+    "codigo": "175",
+    "codigoArea": "0269",
+    "codigoPais": "YT",
+    "iso3": "MYT",
+    "nome": "Mayotte",
+    "nomeFormal": "Departamento de Mayotte"
+  },
+  {
+    "codigo": "484",
+    "codigoArea": "0052",
+    "codigoPais": "MX",
+    "iso3": "MEX",
+    "nome": "México",
+    "nomeFormal": "Estados Unidos Mexicanos"
+  },
+  {
+    "codigo": "583",
+    "codigoArea": "0691",
+    "codigoPais": "FM",
+    "iso3": "FSM",
+    "nome": "Micronésia",
+    "nomeFormal": "Estados Federados da Micronesia"
+  },
+  {
+    "codigo": "498",
+    "codigoArea": "0373",
+    "codigoPais": "MD",
+    "iso3": "MDA",
+    "nome": "Moldova",
+    "nomeFormal": "República de Moldova"
+  },
+  {
+    "codigo": "492",
+    "codigoArea": "0377",
+    "codigoPais": "MC",
+    "iso3": "MCO",
+    "nome": "Mônaco",
+    "nomeFormal": "Principado de Mônaco"
+  },
+  {
+    "codigo": "496",
+    "codigoArea": "0976",
+    "codigoPais": "MN",
+    "iso3": "MNG",
+    "nome": "Mongólia",
+    "nomeFormal": "Mongólia"
+  },
+  {
+    "codigo": "500",
+    "codigoArea": "1664",
+    "codigoPais": "MS",
+    "iso3": "MSR",
+    "nome": "Montserrat",
+    "nomeFormal": "Montserrat"
+  },
+  {
+    "codigo": "504",
+    "codigoArea": "0212",
+    "codigoPais": "MA",
+    "iso3": "MAR",
+    "nome": "Marrocos",
+    "nomeFormal": "Reino de Marrocos"
+  },
+  {
+    "codigo": "508",
+    "codigoArea": "0258",
+    "codigoPais": "MZ",
+    "iso3": "MOZ",
+    "nome": "Moçambique",
+    "nomeFormal": "República de Moçambique"
+  },
+  {
+    "codigo": "104",
+    "codigoArea": "0095",
+    "codigoPais": "MM",
+    "iso3": "MMR",
+    "nome": "Birmânia",
+    "nomeFormal": "República da União de Myanmar"
+  },
+  {
+    "codigo": "516",
+    "codigoArea": "0264",
+    "codigoPais": "NA",
+    "iso3": "NAM",
+    "nome": "Namíbia",
+    "nomeFormal": "República da Namíbia"
+  },
+  {
+    "codigo": "520",
+    "codigoArea": "0674",
+    "codigoPais": "NR",
+    "iso3": "NRU",
+    "nome": "Nauru",
+    "nomeFormal": "República de Nauru"
+  },
+  {
+    "codigo": "524",
+    "codigoArea": "0977",
+    "codigoPais": "NP",
+    "iso3": "NPL",
+    "nome": "Nepal",
+    "nomeFormal": "República Democrática Federativa do Nepal"
+  },
+  {
+    "codigo": "528",
+    "codigoArea": "0031",
+    "codigoPais": "NL",
+    "iso3": "NLD",
+    "nome": "Holanda",
+    "nomeFormal": "Holanda"
+  },
+  {
+    "codigo": "530",
+    "codigoArea": "0599",
+    "codigoPais": "AN",
+    "iso3": "ANT",
+    "nome": "Antilhas Holandesas",
+    "nomeFormal": "Antilhas Holandesas"
+  },
+  {
+    "codigo": "540",
+    "codigoArea": "0687",
+    "codigoPais": "NC",
+    "iso3": "NCL",
+    "nome": "Nova Caledônia",
+    "nomeFormal": "Nova Caledônia"
+  },
+  {
+    "codigo": "554",
+    "codigoArea": "0064",
+    "codigoPais": "NZ",
+    "iso3": "NZL",
+    "nome": "Nova Zelândia",
+    "nomeFormal": "Nova Zelândia"
+  },
+  {
+    "codigo": "558",
+    "codigoArea": "0505",
+    "codigoPais": "NI",
+    "iso3": "NIC",
+    "nome": "Nicarágua",
+    "nomeFormal": "República da Nicarágua"
+  },
+  {
+    "codigo": "562",
+    "codigoArea": "0227",
+    "codigoPais": "NE",
+    "iso3": "NER",
+    "nome": "Niger",
+    "nomeFormal": "República do Niger"
+  },
+  {
+    "codigo": "566",
+    "codigoArea": "0234",
+    "codigoPais": "NG",
+    "iso3": "NGA",
+    "nome": "Nigéria",
+    "nomeFormal": "República Federativa da Nigéria"
+  },
+  {
+    "codigo": "570",
+    "codigoArea": "0683",
+    "codigoPais": "NU",
+    "iso3": "NIU",
+    "nome": "Niue",
+    "nomeFormal": "Niue"
+  },
+  {
+    "codigo": "574",
+    "codigoArea": "0672",
+    "codigoPais": "NF",
+    "iso3": "NFK",
+    "nome": "Ilha Norfolk",
+    "nomeFormal": "Território da Ilha Norfolk"
+  },
+  {
+    "codigo": "580",
+    "codigoArea": "1670",
+    "codigoPais": "MP",
+    "iso3": "MNP",
+    "nome": "Ilhas Marianas do Norte",
+    "nomeFormal": "Comunidade das Ilhas Marianas do Norte"
+  },
+  {
+    "codigo": "578",
+    "codigoArea": "0047",
+    "codigoPais": "NO",
+    "iso3": "NOR",
+    "nome": "Noruega",
+    "nomeFormal": "Reino da Noruega"
+  },
+  {
+    "codigo": "512",
+    "codigoArea": "0968",
+    "codigoPais": "OM",
+    "iso3": "OMN",
+    "nome": "Omã",
+    "nomeFormal": "Sultanato de Omã"
+  },
+  {
+    "codigo": "586",
+    "codigoArea": "0092",
+    "codigoPais": "PK",
+    "iso3": "PAK",
+    "nome": "Paquistão",
+    "nomeFormal": "República Islâmica do Paquistão"
+  },
+  {
+    "codigo": "585",
+    "codigoArea": "0680",
+    "codigoPais": "PW",
+    "iso3": "PLW",
+    "nome": "Palau",
+    "nomeFormal": "República de Palau"
+  },
+  {
+    "codigo": "275",
+    "codigoArea": "0970",
+    "codigoPais": "PS",
+    "iso3": "PSE",
+    "nome": "Palestina",
+    "nomeFormal": "Estado da Palestina"
+  },
+  {
+    "codigo": "591",
+    "codigoArea": "0507",
+    "codigoPais": "PA",
+    "iso3": "PAN",
+    "nome": "Panamá",
+    "nomeFormal": "República do Panamá"
+  },
+  {
+    "codigo": "598",
+    "codigoArea": "0675",
+    "codigoPais": "PG",
+    "iso3": "PNG",
+    "nome": "Papua-Nova Guiné",
+    "nomeFormal": "Estado Independente da Papua-Nova Guiné"
+  },
+  {
+    "codigo": "600",
+    "codigoArea": "0595",
+    "codigoPais": "PY",
+    "iso3": "PRY",
+    "nome": "Paraguai",
+    "nomeFormal": "República do Paraguai"
+  },
+  {
+    "codigo": "604",
+    "codigoArea": "0051",
+    "codigoPais": "PE",
+    "iso3": "PER",
+    "nome": "Peru",
+    "nomeFormal": "República do Peru"
+  },
+  {
+    "codigo": "608",
+    "codigoArea": "0063",
+    "codigoPais": "PH",
+    "iso3": "PHL",
+    "nome": "Filipinas",
+    "nomeFormal": "República das Filipinas"
+  },
+  {
+    "codigo": "612",
+    "codigoArea": "0672",
+    "codigoPais": "PN",
+    "iso3": "PCN",
+    "nome": "Ilhas Picárnia",
+    "nomeFormal": "Ilhas Picárnia"
+  },
+  {
+    "codigo": "616",
+    "codigoArea": "0048",
+    "codigoPais": "PL",
+    "iso3": "POL",
+    "nome": "Polônia",
+    "nomeFormal": "República da Polônia"
+  },
+  {
+    "codigo": "620",
+    "codigoArea": "0351",
+    "codigoPais": "PT",
+    "iso3": "PRT",
+    "nome": "Portugal",
+    "nomeFormal": "República Portuguesa"
+  },
+  {
+    "codigo": "630",
+    "codigoArea": "1787",
+    "codigoPais": "PR",
+    "iso3": "PRI",
+    "nome": "Porto Rico",
+    "nomeFormal": "Comunidade do Porto Rico"
+  },
+  {
+    "codigo": "634",
+    "codigoArea": "0974",
+    "codigoPais": "QA",
+    "iso3": "QAT",
+    "nome": "Catar",
+    "nomeFormal": "Estado do Catar"
+  },
+  {
+    "codigo": "638",
+    "codigoArea": "0262",
+    "codigoPais": "RE",
+    "iso3": "REU",
+    "nome": "Reunião",
+    "nomeFormal": "Polônia"
+  },
+  {
+    "codigo": "642",
+    "codigoArea": "0040",
+    "codigoPais": "RO",
+    "iso3": "ROM",
+    "nome": "Romênia",
+    "nomeFormal": "Romênia"
+  },
+  {
+    "codigo": "643",
+    "codigoArea": "0070",
+    "codigoPais": "RU",
+    "iso3": "RUS",
+    "nome": "Rússia",
+    "nomeFormal": "Federação Russa"
+  },
+  {
+    "codigo": "646",
+    "codigoArea": "0250",
+    "codigoPais": "RW",
+    "iso3": "RWA",
+    "nome": "Ruanda",
+    "nomeFormal": "República da Ruanda"
+  },
+  {
+    "codigo": "654",
+    "codigoArea": "0290",
+    "codigoPais": "SH",
+    "iso3": "SHN",
+    "nome": "Santa Helena",
+    "nomeFormal": "Saint Helena"
+  },
+  {
+    "codigo": "659",
+    "codigoArea": "1869",
+    "codigoPais": "KN",
+    "iso3": "KNA",
+    "nome": "São Cristóvão",
+    "nomeFormal": "São Cristóvão"
+  },
+  {
+    "codigo": "662",
+    "codigoArea": "1758",
+    "codigoPais": "LC",
+    "iso3": "LCA",
+    "nome": "Santa Lúcia",
+    "nomeFormal": "Santa Lúcia"
+  },
+  {
+    "codigo": "666",
+    "codigoArea": "0508",
+    "codigoPais": "PM",
+    "iso3": "SPM",
+    "nome": "São Pedro e Miquelon",
+    "nomeFormal": "Coletividade Territorial de São Pedro e Miquelon"
+  },
+  {
+    "codigo": "670",
+    "codigoArea": "1784",
+    "codigoPais": "VC",
+    "iso3": "VCT",
+    "nome": "São Vicente e Granadinas",
+    "nomeFormal": "São Vicente e Granadinas"
+  },
+  {
+    "codigo": "882",
+    "codigoArea": "0684",
+    "codigoPais": "WS",
+    "iso3": "WSM",
+    "nome": "Samoa",
+    "nomeFormal": "Estado Independente de Samoa"
+  },
+  {
+    "codigo": "674",
+    "codigoArea": "0378",
+    "codigoPais": "SM",
+    "iso3": "SMR",
+    "nome": "São Marino",
+    "nomeFormal": "República de São Marino"
+  },
+  {
+    "codigo": "678",
+    "codigoArea": "0239",
+    "codigoPais": "ST",
+    "iso3": "STP",
+    "nome": "Sao Tomé e Príncipe",
+    "nomeFormal": "República Democrática de Sao Tomé e Príncipe"
+  },
+  {
+    "codigo": "682",
+    "codigoArea": "0966",
+    "codigoPais": "SA",
+    "iso3": "SAU",
+    "nome": "Arábia Saudita",
+    "nomeFormal": "Reino da Arábia Saudita"
+  },
+  {
+    "codigo": "686",
+    "codigoArea": "0221",
+    "codigoPais": "SN",
+    "iso3": "SEN",
+    "nome": "Senegal",
+    "nomeFormal": "República do Senegal"
+  },
+  {
+    "codigo": "688",
+    "codigoArea": "0381",
+    "codigoPais": "CS",
+    "iso3": "SRB",
+    "nome": "Sérvia e Montenegro",
+    "nomeFormal": "União Estatal de Sérvia e Montenegro"
+  },
+  {
+    "codigo": "690",
+    "codigoArea": "0248",
+    "codigoPais": "SC",
+    "iso3": "SYC",
+    "nome": "Seicheles",
+    "nomeFormal": "República das Seicheles"
+  },
+  {
+    "codigo": "694",
+    "codigoArea": "0232",
+    "codigoPais": "SL",
+    "iso3": "SLE",
+    "nome": "República da Serra Leoa",
+    "nomeFormal": "República da Serra Leoa"
+  },
+  {
+    "codigo": "702",
+    "codigoArea": "0065",
+    "codigoPais": "SG",
+    "iso3": "SGP",
+    "nome": "Singapura",
+    "nomeFormal": "República da Singapura"
+  },
+  {
+    "codigo": "703",
+    "codigoArea": "0421",
+    "codigoPais": "SK",
+    "iso3": "SVK",
+    "nome": "Eslováquia",
+    "nomeFormal": "República Eslovaca"
+  },
+  {
+    "codigo": "705",
+    "codigoArea": "0386",
+    "codigoPais": "SI",
+    "iso3": "SVN",
+    "nome": "Eslovênia",
+    "nomeFormal": "República da Eslovênia"
+  },
+  {
+    "codigo": "090",
+    "codigoArea": "0677",
+    "codigoPais": "SB",
+    "iso3": "SLB",
+    "nome": "Ilhas Salomão",
+    "nomeFormal": "Ilhas Salomão"
+  },
+  {
+    "codigo": "706",
+    "codigoArea": "0252",
+    "codigoPais": "SO",
+    "iso3": "SOM",
+    "nome": "Somália",
+    "nomeFormal": "República da Somália"
+  },
+  {
+    "codigo": "710",
+    "codigoArea": "0027",
+    "codigoPais": "ZA",
+    "iso3": "ZAF",
+    "nome": "África do Sul",
+    "nomeFormal": "República da África do Sul"
+  },
+  {
+    "codigo": "239",
+    "codigoArea": "0500",
+    "codigoPais": "GS",
+    "iso3": "SGS",
+    "nome": "Ilhas Geórgia do Sul e Sandwich do Sul",
+    "nomeFormal": "Ilhas Geórgia do Sul e Sandwich do Sul"
+  },
+  {
+    "codigo": "724",
+    "codigoArea": "0034",
+    "codigoPais": "ES",
+    "iso3": "ESP",
+    "nome": "Espanha",
+    "nomeFormal": "Reino da Espanha"
+  },
+  {
+    "codigo": "144",
+    "codigoArea": "0094",
+    "codigoPais": "LK",
+    "iso3": "LKA",
+    "nome": "Sri Lanka",
+    "nomeFormal": "República Democrática Socialista do Sri Lanka"
+  },
+  {
+    "codigo": "736",
+    "codigoArea": "0249",
+    "codigoPais": "SD",
+    "iso3": "SDN",
+    "nome": "Sudão",
+    "nomeFormal": "República do Sudão"
+  },
+  {
+    "codigo": "740",
+    "codigoArea": "0597",
+    "codigoPais": "SR",
+    "iso3": "SUR",
+    "nome": "Suriname",
+    "nomeFormal": "República do Suriname"
+  },
+  {
+    "codigo": "744",
+    "codigoArea": "0047",
+    "codigoPais": "SJ",
+    "iso3": "SJM",
+    "nome": "Esvalbarde",
+    "nomeFormal": "Esvalbarde"
+  },
+  {
+    "codigo": "748",
+    "codigoArea": "0268",
+    "codigoPais": "SZ",
+    "iso3": "SWZ",
+    "nome": "Suazilândia",
+    "nomeFormal": "Reino da Suazilândia"
+  },
+  {
+    "codigo": "752",
+    "codigoArea": "0046",
+    "codigoPais": "SE",
+    "iso3": "SWE",
+    "nome": "Suécia",
+    "nomeFormal": "Reino da Suécia"
+  },
+  {
+    "codigo": "756",
+    "codigoArea": "0041",
+    "codigoPais": "CH",
+    "iso3": "CHE",
+    "nome": "Suiça",
+    "nomeFormal": "Confederação Suiça"
+  },
+  {
+    "codigo": "760",
+    "codigoArea": "0963",
+    "codigoPais": "SY",
+    "iso3": "SYR",
+    "nome": "Síria",
+    "nomeFormal": "República Árabe Síria"
+  },
+  {
+    "codigo": "158",
+    "codigoArea": "0886",
+    "codigoPais": "TW",
+    "iso3": "TWN",
+    "nome": "Taiwan",
+    "nomeFormal": "Taiwan"
+  },
+  {
+    "codigo": "762",
+    "codigoArea": "0992",
+    "codigoPais": "TJ",
+    "iso3": "TJK",
+    "nome": "Tajiquistão",
+    "nomeFormal": "República do Tajiquistão"
+  },
+  {
+    "codigo": "834",
+    "codigoArea": "0255",
+    "codigoPais": "TZ",
+    "iso3": "TZA",
+    "nome": "Tanzânia",
+    "nomeFormal": "República Unida da Tanzânia"
+  },
+  {
+    "codigo": "764",
+    "codigoArea": "0066",
+    "codigoPais": "TH",
+    "iso3": "THA",
+    "nome": "Tailândia",
+    "nomeFormal": "Reino da Tailândia"
+  },
+  {
+    "codigo": "626",
+    "codigoArea": "0670",
+    "codigoPais": "TL",
+    "iso3": "TLS",
+    "nome": "Timor-Leste",
+    "nomeFormal": "República Democrática de Timor-Leste"
+  },
+  {
+    "codigo": "768",
+    "codigoArea": "0228",
+    "codigoPais": "TG",
+    "iso3": "TGO",
+    "nome": "Togo",
+    "nomeFormal": "República Togolesa"
+  },
+  {
+    "codigo": "772",
+    "codigoArea": "0690",
+    "codigoPais": "TK",
+    "iso3": "TKL",
+    "nome": "Toquelau",
+    "nomeFormal": "Toquelau"
+  },
+  {
+    "codigo": "776",
+    "codigoArea": "0676",
+    "codigoPais": "TO",
+    "iso3": "TON",
+    "nome": "Tonga",
+    "nomeFormal": "Reino de Tonga"
+  },
+  {
+    "codigo": "780",
+    "codigoArea": "1868",
+    "codigoPais": "TT",
+    "iso3": "TTO",
+    "nome": "Trinidad e Tobago",
+    "nomeFormal": "República da Trinidad e Tobago"
+  },
+  {
+    "codigo": "788",
+    "codigoArea": "0216",
+    "codigoPais": "TN",
+    "iso3": "TUN",
+    "nome": "Tunísia",
+    "nomeFormal": "República da Tunísia"
+  },
+  {
+    "codigo": "792",
+    "codigoArea": "0090",
+    "codigoPais": "TR",
+    "iso3": "TUR",
+    "nome": "Turquia",
+    "nomeFormal": "República da Turquia"
+  },
+  {
+    "codigo": "795",
+    "codigoArea": "7370",
+    "codigoPais": "TM",
+    "iso3": "TKM",
+    "nome": "Turcomenistão",
+    "nomeFormal": "Turcomenistão"
+  },
+  {
+    "codigo": "796",
+    "codigoArea": "1649",
+    "codigoPais": "TC",
+    "iso3": "TCA",
+    "nome": "Ilhas Turks e Caicos",
+    "nomeFormal": "Ilhas Turks e Caicos"
+  },
+  {
+    "codigo": "798",
+    "codigoArea": "0688",
+    "codigoPais": "TV",
+    "iso3": "TUV",
+    "nome": "Tuvalu",
+    "nomeFormal": "Tuvalu"
+  },
+  {
+    "codigo": "800",
+    "codigoArea": "0256",
+    "codigoPais": "UG",
+    "iso3": "UGA",
+    "nome": "Uganda",
+    "nomeFormal": "República de Uganda"
+  },
+  {
+    "codigo": "804",
+    "codigoArea": "0380",
+    "codigoPais": "UA",
+    "iso3": "UKR",
+    "nome": "Ucrânia",
+    "nomeFormal": "Ucrânia"
+  },
+  {
+    "codigo": "784",
+    "codigoArea": "0971",
+    "codigoPais": "AE",
+    "iso3": "ARE",
+    "nome": "Emirados Árabes",
+    "nomeFormal": "Emirados Árabes Unidos"
+  },
+  {
+    "codigo": "826",
+    "codigoArea": "0044",
+    "codigoPais": "GB",
+    "iso3": "GBR",
+    "nome": "Reino Unido",
+    "nomeFormal": "Reino Unido da Grã-Bretanha e Irlanda do Norte"
+  },
+  {
+    "codigo": "840",
+    "codigoArea": "0001",
+    "codigoPais": "US",
+    "iso3": "USA",
+    "nome": "Estados Unidos",
+    "nomeFormal": "Estados Unidos da América"
+  },
+  {
+    "codigo": "581",
+    "codigoArea": "0001",
+    "codigoPais": "UM",
+    "iso3": "UMI",
+    "nome": "Ilhas Menores Distantes dos Estados Unidos",
+    "nomeFormal": "Ilhas Menores Distantes dos Estados Unidos"
+  },
+  {
+    "codigo": "858",
+    "codigoArea": "0598",
+    "codigoPais": "UY",
+    "iso3": "URY",
+    "nome": "Uruguai",
+    "nomeFormal": "República Oriental do Uruguai"
+  },
+  {
+    "codigo": "860",
+    "codigoArea": "0998",
+    "codigoPais": "UZ",
+    "iso3": "UZB",
+    "nome": "Uzbequistão",
+    "nomeFormal": "República do Uzbequistão"
+  },
+  {
+    "codigo": "548",
+    "codigoArea": "0678",
+    "codigoPais": "VU",
+    "iso3": "VUT",
+    "nome": "Vanuatu",
+    "nomeFormal": "República de Vanuatu"
+  },
+  {
+    "codigo": "862",
+    "codigoArea": "0058",
+    "codigoPais": "VE",
+    "iso3": "VEN",
+    "nome": "Venezuela",
+    "nomeFormal": "República Bolivariana da Venezuela"
+  },
+  {
+    "codigo": "704",
+    "codigoArea": "0084",
+    "codigoPais": "VN",
+    "iso3": "VNM",
+    "nome": "Vietnam",
+    "nomeFormal": "República Socialista do Vietnam"
+  },
+  {
+    "codigo": "092",
+    "codigoArea": "1284",
+    "codigoPais": "VG",
+    "iso3": "VGB",
+    "nome": "Ilhas Virgens Inglesas",
+    "nomeFormal": "Ilhas Virgens"
+  },
+  {
+    "codigo": "850",
+    "codigoArea": "1340",
+    "codigoPais": "VI",
+    "iso3": "VIR",
+    "nome": "Ilhas Virgens (USA)",
+    "nomeFormal": "Ilhas Virgens dos Estados Unidos"
+  },
+  {
+    "codigo": "876",
+    "codigoArea": "0681",
+    "codigoPais": "WF",
+    "iso3": "WLF",
+    "nome": "Wallis e Futuna",
+    "nomeFormal": "Wallis e Futuna"
+  },
+  {
+    "codigo": "732",
+    "codigoArea": "0212",
+    "codigoPais": "EH",
+    "iso3": "ESH",
+    "nome": "Saara Ocidental",
+    "nomeFormal": "Saara Ocidental"
+  },
+  {
+    "codigo": "887",
+    "codigoArea": "0967",
+    "codigoPais": "YE",
+    "iso3": "YEM",
+    "nome": "Iêmen",
+    "nomeFormal": "República do Iêmen"
+  },
+  {
+    "codigo": "894",
+    "codigoArea": "0260",
+    "codigoPais": "ZM",
+    "iso3": "ZMB",
+    "nome": "Zâmbia",
+    "nomeFormal": "República do Zâmbia"
+  },
+  {
+    "codigo": "716",
+    "codigoArea": "0263",
+    "codigoPais": "ZW",
+    "iso3": "ZWE",
+    "nome": "Zimbábue",
+    "nomeFormal": "República do Zimbábue"
+  }
+]

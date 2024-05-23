@@ -1,3 +1,6 @@
+import { TRANSACTION_GATEWAYS, TRANSACTION_STATUS } from "@/constants";
+import { Address } from "core/domain/entities";
+
 interface PagarmeCustomerDocument {
   type: 'individual' | 'corporation';
   number: string;
@@ -126,6 +129,129 @@ type PagarmeTransactionCreditCard = WithCardId | WithoutCardId;
 
 export type PagarmeTransaction = PagarmeTransactionCreditCard | PagarmeTransactionBoleto;
 
+export interface PagarmeTransactionResponse {
+  object: string;
+  status: string;
+  refse_reason?: string;
+  status_reason?: string;
+  acquirer_response_code?: string;
+  acquirer_name?: string;
+  acquirer_id?: string;
+  authorization_code?: string;
+  soft_descriptor?: string;
+  tid?: number;
+  nsu?: number;
+  date_created?: string;
+  date_updated?: string;
+  amount?: number;
+  authorized_amount?: number;
+  paid_amount?: number;
+  refunded_amount?: number;
+  installments?: number;
+  id?: number;
+  cost?: number;
+  card_holder_name?: string;
+  card_last_digits?: string;
+  card_first_digits?: string;
+  card_brand?: string;
+  card_pin_mode?: string;
+  postback_url?: string;
+  payment_method?: string;
+  capture_method?: string;
+  antifraud_score?: string;
+  boleto_url?: string;
+  boleto_barcode?: string;
+  referer?: string;
+  ip?: string;
+  subscription_id?: string;
+  phone?: string;
+  address?: string;
+  customer?: {
+    object?: string;
+    id?: string;
+    external_id?: string;
+    type?: string;
+    country?: string;
+    document_number?: string;
+    document_type?: string;
+    name?: string;
+    email?: string;
+    phone_numbers?: string[];
+    born_at?: string;
+    birthday?: string;
+    gender?: string;
+    date_created?: string;
+    documents?: {
+      object?: string;
+      id?: string;
+      type?: string;
+      number?: string;
+    }[]
+  },
+  billing?: {
+    address?: Address;
+    object?: string;
+    id?: number;
+    name?: string;
+  },
+  shipping?: {
+    address?: Address;
+    object?: string;
+    id?: number;
+    name?: string;
+    fee?: number;
+    delivery_date?: string;
+    expedited?: boolean;
+  },
+  items?: {
+    object?: string;
+    id?: string;
+    title?: string;
+    unit_price?: number;
+    quantity?: number;
+    category?: string;
+    tangible?: boolean;
+    venue?: string;
+    date?: string;
+  }[],
+  card?: {
+    object?: string;
+    id?: string;
+    date_created?: string;
+    date_updated?: string;
+    brand?: string;
+    holder_name?: string;
+    first_digits?: string;
+    last_digits?: string;
+    country?: string;
+    fingerprint?: string;
+    valid?: boolean;
+    expiration_date?: string;
+  },
+  split_rules?: string;
+  metadata?: any;
+  antifraud_metadata?: any;
+  reference_key?: string;
+}
+
 export function isWithoutCardId(transaction: PagarmeTransaction): transaction is WithoutCardId {
   return !!(transaction as WithoutCardId).card_hash;
+}
+
+export function getTransactionStatus(gateway: TRANSACTION_GATEWAYS, status: string) {
+  const statusMap: {[key in TRANSACTION_GATEWAYS]: any} = {
+    PAGARME: {
+      'paid': TRANSACTION_STATUS.PAID,
+      'processing': TRANSACTION_STATUS.PENDING,
+      'refunded': TRANSACTION_STATUS.REFUNDED,
+      'refused': TRANSACTION_STATUS.REJECTED,
+      'waiting_payment': TRANSACTION_STATUS.PENDING,
+    },
+    MERCADOPAGO: {},
+    PAYPAL: {},
+    STRIPE: {},
+  }
+  const transactionStatus = statusMap[gateway]?.[status]
+  if(transactionStatus) return transactionStatus;
+  return status;
 }

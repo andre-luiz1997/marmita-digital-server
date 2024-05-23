@@ -12,7 +12,12 @@ export function filterUndefinedOrNull(obj: any): any {
           filteredObj[key] = filterUndefinedOrNull(value);
         } else if (Array.isArray(value)) {
           // Filter each item in an array recursively
-          filteredObj[key] = value.map(item => filterUndefinedOrNull(item)); 
+          filteredObj[key] = value.map(item => {
+            if (typeof item === 'object') {
+              return filterUndefinedOrNull(item);
+            }
+            return item;
+          }); 
         } else {
           // Keep primitive values as-is
           filteredObj[key] = value;
