@@ -17,8 +17,17 @@ export class TransactionMongoRepository extends MongoRepository<TransactionEntit
   }
 
   async findAll(props?: PaginationProps) {
-    const query = this.model.find();
-    if(props) this.preparePagination(query, props);
+    const query = this.model.find().populate<TransactionEntity>([
+      {
+        path: 'tenant',
+        model: ENTITIES.TENANT
+      },
+      {
+        path: 'plan',
+        model: ENTITIES.PLAN
+      },
+    ])
+    if (props) this.preparePagination(query, props);
     return {
       data: await query.exec(),
       count: await this.model.countDocuments(query.getOptions())

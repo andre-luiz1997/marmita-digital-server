@@ -4,7 +4,7 @@ import { DB_HOST, DB_NAME, DB_PASS, DB_PORT, DB_USER, ENTITIES, JWT_EXPIRATION, 
 import { APP_GUARD } from '@nestjs/core';
 import { JwtAuthGuard } from '@/shared/guards';
 import { PermissionsGuard } from '@/shared/guards/permission.guard';
-import { UserController, AuthController, TenantController, PlanController, SubscriptionController, CryptoController, PaymentController, ZipController } from '@/presentation/controllers';
+import { UserController, AuthController, TenantController, PlanController, SubscriptionController, CryptoController, PaymentController, ZipController, TransactionController } from '@/presentation/controllers';
 import { MongooseModule } from '@nestjs/mongoose';
 import { UserMongoModel } from './mongo/models';
 import { repositoriesProviders } from './mongo/repository-providers';
@@ -21,6 +21,7 @@ import { SubscriptionsService } from 'services/subscriptions.service';
 import { paymentsAdaptersProviders, zipcodeAdaptersProvider } from 'data/remote/adapters';
 import { PaymentsService } from 'services/payments.service';
 import { TransactionMongoModel } from './mongo/models/transaction-mongo.model';
+import { TransactionsService } from 'services/transactions.service';
 
 function getMongooseConnectionString() {
     const user = DB_USER ? `${DB_USER}:${DB_PASS}@` : '';
@@ -55,6 +56,7 @@ function getMongooseConnectionString() {
         PlansService,
         SubscriptionsService,
         PaymentsService,
+        TransactionsService,
         {
             provide: APP_GUARD,
             useClass: JwtAuthGuard,
@@ -73,7 +75,8 @@ function getMongooseConnectionString() {
         SubscriptionController,
         CryptoController,
         PaymentController,
-        ZipController
+        ZipController,
+        TransactionController
     ],
     exports: [
         ...repositoriesProviders,
@@ -83,6 +86,7 @@ function getMongooseConnectionString() {
         TenantsService,
         PlansService,
         SubscriptionsService,
+        TransactionsService
     ]
 })
 export class InfraModule implements NestModule {

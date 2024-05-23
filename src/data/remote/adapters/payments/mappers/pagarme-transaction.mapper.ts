@@ -29,6 +29,7 @@ export class PagarmeTransactionMapper implements Mapper<TransactionEntity, Pagar
     // @ts-ignore
     const payment: SubscriptionPayment = {
       method: param.payment.method,
+      currency: param.plan.pricing.currency
     }
     if (param.payment.method == PAYMENT_METHODS.CARD) {
       (payment as CardPayment).creditCard = {

@@ -3,5 +3,6 @@ export * from './payments';
 export * from './plans';
 export * from './subscriptions';
 export * from './tenants';
+export * from './transactions';
 export * from './use-cases.providers';
 export * from './users';

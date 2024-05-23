@@ -16,6 +16,19 @@ export class SubscriptionMongoRepository extends MongoRepository<SubscriptionEnt
     super(model);
   }
 
+  async findOne(filter: any) {
+    return this.model.findOne(filter).populate([
+      {
+        path: 'tenant',
+        model: ENTITIES.TENANT
+      },
+      {
+        path: 'plan',
+        model: ENTITIES.PLAN
+      },
+    ]).exec();  
+  }
+
   async findAll(props?: PaginationProps) {
     const query = this.model.find();
     if(props) this.preparePagination(query, props);

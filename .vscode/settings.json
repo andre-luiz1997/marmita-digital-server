@@ -34,6 +34,7 @@
     "/src/data/remote/adapters/payments/types/pagarme",
     "/src/data/remote/adapters/payments/mappers",
     "/src/services/use-cases/payments",
-    "/src/data/remote/adapters/zipcode"
+    "/src/data/remote/adapters/zipcode",
+    "/src/services/use-cases/transactions"
   ]
 }

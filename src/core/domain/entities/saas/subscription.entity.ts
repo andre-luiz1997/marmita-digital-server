@@ -4,9 +4,11 @@ import { PAYMENT_METHODS, SUBSCRIPTION_STATUS } from "@/constants";
 
 export interface PixPayment {
   method: PAYMENT_METHODS.PIX;
+  currency?: string;
 }
 export interface CardPayment {
   method: PAYMENT_METHODS.CARD;
+  currency?: string;
   creditCard: {
     number: string;
     name: string;

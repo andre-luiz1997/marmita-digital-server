@@ -54,10 +54,12 @@ export class CreateSubscriptionUseCase implements UseCase<SubscriptionEntity> {
         transactionPayment = {
           method: PAYMENT_METHODS.CARD,
           creditCard: payment.creditCard,
+          currency: plan.pricing.currency
         }
       } else if (payment.method === PAYMENT_METHODS.PIX) {
         transactionPayment = {
           method: PAYMENT_METHODS.PIX,
+          currency: plan.pricing.currency
         }
       }
       const billing = data.billing || tenant.billing;
@@ -70,12 +72,9 @@ export class CreateSubscriptionUseCase implements UseCase<SubscriptionEntity> {
         billing,
         gateway: TRANSACTION_GATEWAYS.PAGARME
       }
-      console.log('🚀 ~ file: create-subscription.use-case.ts:73 ~ CreateSubscriptionUseCase ~ execute ~ dto 🚀 ➡➡', dto);
       const valid = await validate(CreateTransactionDTO.name, dto);      
-      console.log('🚀 ~ file: create-subscription.use-case.ts:74 ~ CreateSubscriptionUseCase ~ execute ~ valid 🚀 ➡➡', valid);
       const res = await this.createTransactionUseCase.execute(dto);
       if(res.status === TRANSACTION_STATUS.PAID) await this.subscriptionsRepository.update(subscription._id, { status: SUBSCRIPTION_STATUS.ACTIVE });
-      console.log('🚀 ~ file: create-subscription.use-case.ts:73 ~ CreateSubscriptionUseCase ~ execute ~ res 🚀 ➡➡', res);
       return subscription;
     } catch (error) {
       await this.subscriptionsRepository.delete(subscription._id);
